@@ -1,0 +1,3212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        FINEXA | Analysis Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/result.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         FINEXA RESULT DASHBOARD
+    ====================================================== -->
+
+    <div class="result-page">
+
+
+        <!-- =================================================
+             TOP NAVIGATION
+        ================================================== -->
+
+        <header class="result-header">
+
+            <!-- BRAND -->
+            <div class="result-brand">
+
+                <div class="brand-logo">
+
+                    <img
+                        src="{{ url_for('static', filename='css/logo.png') }}"
+                        alt="Auroun DataSYN Logo"
+                    >
+
+                </div>
+
+
+                <div class="brand-text">
+
+                    <div class="brand-name">
+                        FINEXA
+                    </div>
+
+                    <div class="brand-company">
+                        by Auroun DataSYN
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HEADER RIGHT -->
+            <div class="header-actions">
+
+                <div class="analysis-status">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        Analysis Complete
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="/upload"
+                    class="header-button secondary-button"
+                >
+                    <span>＋</span>
+                    New Analysis
+                </a>
+
+
+                <a
+                    href="/"
+                    class="header-button primary-button"
+                >
+                    Home
+                </a>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             MAIN DASHBOARD
+        ================================================== -->
+
+        <main class="result-main">
+
+
+            <!-- =============================================
+                 DASHBOARD INTRO
+            ============================================== -->
+
+            <section class="dashboard-intro">
+
+                <div class="intro-content">
+
+                    <span class="section-eyebrow">
+                        FINEXA INTELLIGENCE
+                    </span>
+
+
+                    <h1>
+                        Your Data,
+                        <span>Analyzed.</span>
+                    </h1>
+
+
+                    <p>
+                        FINEXA has processed your uploaded document
+                        and generated an intelligent analytical view
+                        of the available data.
+                    </p>
+
+                </div>
+
+
+                <!-- DOCUMENT INFORMATION -->
+
+                <div class="document-card">
+
+                    <div class="document-icon">
+
+                        <span>
+                            ▣
+                        </span>
+
+                    </div>
+
+
+                    <div class="document-details">
+
+                        <span class="document-label">
+                            ANALYZED DOCUMENT
+                        </span>
+
+                        <strong
+                            id="resultDatasetName"
+                        >
+                            Loading dataset...
+                        </strong>
+
+                        <small
+                            id="resultSheetName"
+                        >
+                            Preparing dataset information
+                        </small>
+
+                    </div>
+
+
+                    <div class="document-indicator">
+
+                        <span class="indicator-ring"></span>
+
+                    </div>
+
+                </div>
+                </section>
+
+
+
+            <!-- =================================================
+                 DATASET INTELLIGENCE
+            ================================================== -->
+
+            <section class="dataset-intelligence">
+
+                <div class="intelligence-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            DATASET INTELLIGENCE
+                        </span>
+
+                        <h2>
+                            At a glance
+                        </h2>
+
+                    </div>
+
+
+                    <span class="live-badge">
+                        <span></span>
+                        LIVE ANALYSIS
+                    </span>
+
+                </div>
+
+
+
+                <!-- INTELLIGENCE CARDS -->
+
+                <div class="intelligence-grid">
+
+
+                    <!-- RECORDS -->
+
+                    <div class="intelligence-card">
+
+                        <div class="intelligence-card-top">
+
+                            <span>
+                                TOTAL RECORDS
+                            </span>
+
+                            <div class="mini-icon">
+                                #
+                            </div>
+
+                        </div>
+
+
+                        <strong
+                            id="totalRecords"
+                        >
+                            —
+                        </strong>
+
+
+                        <p>
+                            Rows detected in your dataset
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- COLUMNS -->
+
+                    <div class="intelligence-card">
+
+                        <div class="intelligence-card-top">
+
+                            <span>
+                                TOTAL COLUMNS
+                            </span>
+
+                            <div class="mini-icon">
+                                ◫
+                            </div>
+
+                        </div>
+
+
+                        <strong
+                            id="totalColumns"
+                        >
+                            —
+                        </strong>
+
+
+                        <p>
+                            Data fields available
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- NUMERIC -->
+
+                    <div class="intelligence-card">
+
+                        <div class="intelligence-card-top">
+
+                            <span>
+                                NUMERIC FIELDS
+                            </span>
+
+                            <div class="mini-icon">
+                                ∑
+                            </div>
+
+                        </div>
+
+
+                        <strong
+                            id="numericFields"
+                        >
+                            —
+                        </strong>
+
+
+                        <p>
+                            Quantitative fields detected
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- TEXT -->
+
+                    <div class="intelligence-card">
+
+                        <div class="intelligence-card-top">
+
+                            <span>
+                                TEXT FIELDS
+                            </span>
+
+                            <div class="mini-icon">
+                                Aa
+                            </div>
+
+                        </div>
+
+
+                        <strong
+                            id="textFields"
+                        >
+                            —
+                        </strong>
+
+
+                        <p>
+                            Categorical fields detected
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================================
+     RESULT PAGE — PART 2
+     DYNAMIC KPI INTELLIGENCE
+========================================================= -->
+
+<section class="result-section kpi-section" id="kpiSection">
+
+    <div class="section-heading-row">
+
+        <div>
+            <span class="section-eyebrow">
+                DATA INTELLIGENCE
+            </span>
+
+            <h2>
+                What Your Data <span>Reveals</span>
+            </h2>
+
+            <p>
+                FINEXA automatically identifies the most meaningful
+                metrics from your uploaded dataset.
+            </p>
+        </div>
+
+        <div class="kpi-live-indicator">
+            <span class="kpi-live-dot"></span>
+            LIVE ANALYSIS
+        </div>
+
+    </div>
+
+
+    <!-- Dynamic KPI cards will be inserted here by result.js -->
+
+    <div class="kpi-grid" id="dynamicKpiGrid">
+
+        <div class="kpi-loading-card">
+
+            <div class="kpi-loading-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="kpi-loading-content">
+                <span class="kpi-loading-line large"></span>
+                <span class="kpi-loading-line"></span>
+            </div>
+
+        </div>
+
+        <div class="kpi-loading-card">
+
+            <div class="kpi-loading-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="kpi-loading-content">
+                <span class="kpi-loading-line large"></span>
+                <span class="kpi-loading-line"></span>
+            </div>
+
+        </div>
+
+        <div class="kpi-loading-card">
+
+            <div class="kpi-loading-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="kpi-loading-content">
+                <span class="kpi-loading-line large"></span>
+                <span class="kpi-loading-line"></span>
+            </div>
+
+        </div>
+
+        <div class="kpi-loading-card">
+
+            <div class="kpi-loading-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="kpi-loading-content">
+                <span class="kpi-loading-line large"></span>
+                <span class="kpi-loading-line"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     END OF RESULT PAGE — PART 2 HTML
+========================================================= -->
+
+
+
+            <!-- =================================================
+                 ANALYTICS SECTION — PART 3
+            ================================================== -->
+
+            <!-- =========================================================
+     RESULT PAGE — PART 3
+     DYNAMIC ANALYTICS & CHARTS
+========================================================= -->
+
+<section class="result-section analytics-section" id="analyticsSection">
+
+    <div class="section-heading-row analytics-heading">
+
+        <div>
+            <span class="section-eyebrow">
+                AUTOMATED ANALYTICS
+            </span>
+
+            <h2>
+                Explore Your <span>Data</span>
+            </h2>
+
+            <p>
+                FINEXA automatically selects meaningful visualizations
+                based on the structure and values in your uploaded dataset.
+            </p>
+        </div>
+
+        <div class="analytics-live-indicator">
+            <span class="analytics-live-dot"></span>
+            AUTO GENERATED
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ANALYTICS TOOLBAR
+    ====================================================== -->
+
+    <div class="analytics-toolbar">
+
+        <div class="analytics-toolbar-left">
+
+            <span class="toolbar-label">
+                VISUAL ANALYTICS
+            </span>
+
+            <span class="toolbar-description">
+                Dynamic charts from your dataset
+            </span>
+
+        </div>
+
+        <div class="analytics-toolbar-right">
+
+            <button
+                type="button"
+                class="analytics-filter active"
+                data-chart-filter="all">
+                All
+            </button>
+
+            <button
+                type="button"
+                class="analytics-filter"
+                data-chart-filter="comparison">
+                Comparison
+            </button>
+
+            <button
+                type="button"
+                class="analytics-filter"
+                data-chart-filter="trend">
+                Trends
+            </button>
+
+            <button
+                type="button"
+                class="analytics-filter"
+                data-chart-filter="distribution">
+                Distribution
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         DYNAMIC CHART GRID
+    ====================================================== -->
+
+    <div class="analytics-grid" id="dynamicAnalyticsGrid">
+
+        <!-- Loading Card 1 -->
+
+        <div class="analytics-loading-card">
+
+            <div class="analytics-loading-top">
+
+                <span class="analytics-loading-title"></span>
+
+                <span class="analytics-loading-menu"></span>
+
+            </div>
+
+            <div class="analytics-loading-chart">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <div class="analytics-loading-footer">
+
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Loading Card 2 -->
+
+        <div class="analytics-loading-card">
+
+            <div class="analytics-loading-top">
+
+                <span class="analytics-loading-title"></span>
+
+                <span class="analytics-loading-menu"></span>
+
+            </div>
+
+            <div class="analytics-loading-chart">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <div class="analytics-loading-footer">
+
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Loading Card 3 -->
+
+        <div class="analytics-loading-card">
+
+            <div class="analytics-loading-top">
+
+                <span class="analytics-loading-title"></span>
+
+                <span class="analytics-loading-menu"></span>
+
+            </div>
+
+            <div class="analytics-loading-chart">
+            <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <div class="analytics-loading-footer">
+
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Loading Card 4 -->
+
+        <div class="analytics-loading-card">
+
+            <div class="analytics-loading-top">
+
+                <span class="analytics-loading-title"></span>
+
+                <span class="analytics-loading-menu"></span>
+
+            </div>
+
+            <div class="analytics-loading-chart">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <div class="analytics-loading-footer">
+
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ANALYTICS EMPTY STATE
+    ====================================================== -->
+
+    <div
+        class="analytics-empty-state"
+        id="analyticsEmptyState"
+        style="display:none;">
+
+        <div class="analytics-empty-icon">
+            ◌
+        </div>
+
+        <h3>
+            More Data Needed
+        </h3>
+
+        <p>
+            FINEXA could not find enough compatible fields
+            to generate additional visualizations.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     END OF RESULT PAGE — PART 3 HTML
+========================================================= -->
+
+
+
+            <!-- =================================================
+                 INTELLIGENCE / INSIGHTS — PART 4
+            ================================================== -->
+
+            <!-- =========================================================
+     RESULT PAGE — PART 4
+     INTELLIGENT DATA INSIGHTS
+========================================================= -->
+
+<section
+    class="result-section insights-section"
+    id="insightsSection">
+
+    <div class="section-heading-row insights-heading">
+
+        <div>
+
+            <span class="section-eyebrow">
+                INTELLIGENT INSIGHTS
+            </span>
+
+            <h2>
+                What FINEXA <span>Found</span>
+            </h2>
+
+            <p>
+                Automated observations generated from the actual
+                structure, values, and patterns in your dataset.
+            </p>
+
+        </div>
+
+        <div class="insights-live-indicator">
+
+            <span class="insights-live-dot"></span>
+
+            DATA INTELLIGENCE
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="insights-grid"
+        id="dynamicInsightsGrid">
+
+        <div class="insight-loading-card">
+
+            <div class="insight-loading-icon">
+                ✦
+            </div>
+
+            <div class="insight-loading-content">
+
+                <span
+                    class="insight-loading-line large">
+                </span>
+
+                <span
+                    class="insight-loading-line">
+                </span>
+
+                <span
+                    class="insight-loading-line short">
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="insight-loading-card">
+
+            <div class="insight-loading-icon">
+                ◈
+            </div>
+
+            <div class="insight-loading-content">
+
+                <span
+                    class="insight-loading-line large">
+                </span>
+
+                <span
+                    class="insight-loading-line">
+                </span>
+
+                <span
+                    class="insight-loading-line short">
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="insight-loading-card">
+
+            <div class="insight-loading-icon">
+                ↗
+            </div>
+
+            <div class="insight-loading-content">
+
+                <span
+                    class="insight-loading-line large">
+                </span>
+
+                <span
+                    class="insight-loading-line">
+                </span>
+
+                <span
+                    class="insight-loading-line short">
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="insights-empty-state"
+        id="insightsEmptyState"
+        style="display:none;">
+
+        <div class="insights-empty-icon">
+            ◌
+        </div>
+
+        <h3>
+            No Additional Insights
+        </h3>
+
+        <p>
+            FINEXA could not identify enough meaningful patterns
+            in this dataset.
+        </p>
+
+    </div>
+
+</section>
+
+
+            <!-- =================================================
+                 FINEXA ANALYST — PART 5
+            ================================================== -->
+
+            <!-- =========================================================
+     FINEXA RESULT PAGE — PART 5
+     DATA HEALTH & RECOMMENDATIONS
+========================================================= -->
+
+<section class="result-section health-section" id="analystSection">
+
+    <div class="section-heading-row health-heading">
+
+        <div>
+            <span class="section-eyebrow">
+                FINEXA INTELLIGENCE
+            </span>
+
+            <h2>
+                Data Health & <span>Recommendations</span>
+            </h2>
+
+            <p>
+                FINEXA evaluates the quality of your dataset and highlights
+                practical actions from the available data.
+            </p>
+        </div>
+
+        <div class="health-live-indicator">
+            <span class="health-live-dot"></span>
+            INTELLIGENCE ACTIVE
+        </div>
+
+    </div>
+
+
+    <!-- HEALTH OVERVIEW -->
+
+    <div class="health-overview">
+
+        <div class="health-score-card">
+
+            <div class="health-score-header">
+                <span class="health-card-label">
+                    DATA HEALTH SCORE
+                </span>
+
+                <span class="health-status-badge"
+                      id="healthStatusBadge">
+                    ANALYZING
+                </span>
+            </div>
+
+            <div class="health-score-content">
+
+                <div class="health-score-ring"
+                     id="healthScoreRing">
+
+                    <div class="health-score-inner">
+                        <strong id="healthScore">
+                            —
+                        </strong>
+
+                        <span>
+                            / 100
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="health-score-details">
+
+                    <h3 id="healthScoreTitle">
+                        Evaluating Dataset
+                    </h3>
+
+                    <p id="healthScoreDescription">
+                        FINEXA is analyzing completeness,
+                        consistency and usable data fields.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HEALTH METRICS -->
+
+        <div class="health-metrics-grid">
+
+            <div class="health-metric-card">
+
+                <div class="health-metric-icon">
+                    ◈
+                </div>
+
+                <div>
+                    <span>
+                        COMPLETENESS
+                    </span>
+
+                    <strong id="healthCompleteness">
+                        —
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="health-metric-card">
+
+                <div class="health-metric-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <span>
+                        VALID DATA
+                    </span>
+
+                    <strong id="healthValidData">
+                        —
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="health-metric-card">
+
+                <div class="health-metric-icon">
+                    #
+                </div>
+
+                <div>
+                    <span>
+                        NUMERIC FIELDS
+                    </span>
+
+                    <strong id="healthNumericFields">
+                        —
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="health-metric-card">
+
+                <div class="health-metric-icon">
+                    !
+                </div>
+
+                <div>
+                    <span>
+                        DATA ISSUES
+                    </span>
+
+                    <strong id="healthDataIssues">
+                        —
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RECOMMENDATIONS -->
+
+    <div class="recommendations-container">
+
+        <div class="recommendations-header">
+
+            <div>
+                <span class="section-eyebrow">
+                    ACTION CENTER
+                </span>
+
+                <h3>
+                    Recommended <span>Actions</span>
+                </h3>
+
+            </div>
+
+            <span class="recommendations-badge">
+                AUTO GENERATED
+            </span>
+
+        </div>
+
+
+        <div class="recommendations-grid"
+             id="dynamicRecommendationsGrid">
+
+            <div class="recommendation-loading-card">
+                <div class="recommendation-loading-icon"></div>
+
+                <div class="recommendation-loading-content">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+
+            <div class="recommendation-loading-card">
+                <div class="recommendation-loading-icon"></div>
+
+                <div class="recommendation-loading-content">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+
+            <div class="recommendation-loading-card">
+                <div class="recommendation-loading-icon"></div>
+
+                <div class="recommendation-loading-content">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="recommendations-empty-state"
+             id="recommendationsEmptyState"
+             style="display:none;">
+
+            <div class="recommendations-empty-icon">
+                ◌
+            </div>
+
+            <h3>
+                No Recommendations Available
+            </h3>
+
+            <p>
+                FINEXA could not identify enough reliable patterns
+                for additional recommendations.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+            <!-- =================================================
+                 DATA EXPLORER — PART 6
+            ================================================== -->
+
+            <!-- =========================================================
+     PART 5 — VISUAL ANALYTICS
+========================================================= -->
+
+<section class="result-section visual-analytics-section"
+         id="analyticsSection">
+
+    <div class="section-heading-row visual-analytics-heading">
+
+        <div>
+            <span class="section-eyebrow">
+                VISUAL ANALYTICS
+            </span>
+
+            <h2>
+                Explore Your <span>Data Patterns</span>
+            </h2>
+
+            <p>
+                FINEXA automatically selects meaningful fields
+                from your dataset to create visual analytics.
+            </p>
+        </div>
+
+        <div class="visual-live-indicator">
+            <span class="visual-live-dot"></span>
+            LIVE VISUALIZATION
+        </div>
+
+    </div>
+
+
+    <!-- CHART GRID -->
+
+    <div class="visual-chart-grid">
+
+        <!-- BAR CHART -->
+
+        <article class="visual-chart-card"
+                 id="barChartCard">
+
+            <div class="visual-chart-header">
+
+                <div>
+                    <span class="visual-chart-type">
+                        BAR ANALYTICS
+                    </span>
+
+                    <h3 id="barChartTitle">
+                        Category Analysis
+                    </h3>
+
+                    <p id="barChartDescription">
+                        Comparing meaningful categories and values
+                        from your uploaded dataset.
+                    </p>
+                </div>
+
+                <div class="visual-chart-icon">
+                    ▥
+                </div>
+
+            </div>
+
+
+            <div class="visual-chart-meta">
+
+                <span id="barChartXAxis">
+                    Category
+                </span>
+
+                <span>×</span>
+
+                <span id="barChartYAxis">
+                    Metric
+                </span>
+
+            </div>
+
+
+            <div class="visual-chart-container"
+                 id="dynamicBarChart">
+
+                <div class="visual-chart-loading">
+
+                    <div class="chart-loading-bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <p>
+                        FINEXA is building your chart...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="visual-chart-footer">
+
+                <span>
+                    <span class="footer-status-dot"></span>
+                    Based on uploaded data
+                </span>
+
+                <span id="barChartField">
+                    Auto detected
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <!-- LINE CHART -->
+
+        <article class="visual-chart-card"
+                 id="lineChartCard">
+
+            <div class="visual-chart-header">
+
+                <div>
+                    <span class="visual-chart-type">
+                        TREND ANALYTICS
+                    </span>
+
+                    <h3 id="lineChartTitle">
+                        Trend Analysis
+                    </h3>
+
+                    <p id="lineChartDescription">
+                        Tracking meaningful changes across
+                        your dataset over time.
+                    </p>
+                </div>
+
+                <div class="visual-chart-icon">
+                    ↗
+                </div>
+
+            </div>
+
+
+            <div class="visual-chart-meta">
+
+                <span id="lineChartXAxis">
+                    Time
+                </span>
+
+                <span>×</span>
+
+                <span id="lineChartYAxis">
+                    Metric
+                </span>
+
+            </div>
+
+
+            <div class="visual-chart-container"
+                 id="dynamicLineChart">
+
+                <div class="visual-chart-loading">
+
+                    <div class="chart-loading-line">
+                    <svg
+                            viewBox="0 0 600 220"
+                            preserveAspectRatio="none"
+                            aria-hidden="true">
+
+                            <path
+                                d="M0 175
+                                   C55 165 75 145 120 155
+                                   C170 170 190 105 235 120
+                                   C285 138 305 75 350 92
+                                   C405 112 425 55 470 70
+                                   C520 90 545 35 600 48"
+                            ></path>
+
+                        </svg>
+
+                    </div>
+
+                    <p>
+                        FINEXA is detecting time-based patterns...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="visual-chart-footer">
+
+                <span>
+                    <span class="footer-status-dot"></span>
+                    Based on uploaded data
+                </span>
+
+                <span id="lineChartField">
+                    Auto detected
+                </span>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- VISUAL ANALYTICS SUMMARY -->
+
+    <div class="visual-summary-strip">
+
+        <div class="visual-summary-item">
+
+            <span class="visual-summary-icon">
+                ◈
+            </span>
+
+            <div>
+                <span>PRIMARY CATEGORY</span>
+                <strong id="visualCategoryField">
+                    Detecting...
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="visual-summary-item">
+
+            <span class="visual-summary-icon">
+                ≈
+            </span>
+
+            <div>
+                <span>PRIMARY METRIC</span>
+                <strong id="visualMetricField">
+                    Detecting...
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="visual-summary-item">
+
+            <span class="visual-summary-icon">
+                ◷
+            </span>
+
+            <div>
+                <span>TIME FIELD</span>
+                <strong id="visualTimeField">
+                    Detecting...
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="visual-summary-item">
+
+            <span class="visual-summary-icon">
+                ✦
+            </span>
+
+            <div>
+                <span>VISUAL STATUS</span>
+                <strong id="visualStatusField">
+                    Analyzing
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NO VISUAL DATA STATE -->
+
+    <div class="visual-no-data-state"
+         id="visualNoDataState"
+         style="display:none;">
+
+        <div class="visual-no-data-icon">
+            ◌
+        </div>
+
+        <h3>
+            More Visual Data Needed
+        </h3>
+
+        <p>
+            FINEXA could not find enough compatible fields
+            to create this visualization from the uploaded dataset.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+            <!-- =================================================
+                 COLUMN INTELLIGENCE — PART 7
+            ================================================== -->
+
+            <!-- =========================================================
+     PART 6 — DATA EXPLORER
+========================================================= -->
+
+<section class="result-section data-explorer-section"
+         id="explorerSection">
+
+    <div class="section-heading-row explorer-heading">
+
+        <div>
+
+            <span class="section-eyebrow">
+                DATA EXPLORER
+            </span>
+
+            <h2>
+                Explore Your <span>Dataset</span>
+            </h2>
+
+            <p>
+                Inspect the actual rows and columns analyzed by FINEXA.
+            </p>
+
+        </div>
+
+        <div class="explorer-live-indicator">
+
+            <span class="explorer-live-dot"></span>
+
+            LIVE DATA
+
+        </div>
+
+    </div>
+
+
+    <!-- EXPLORER TOOLBAR -->
+
+    <div class="explorer-toolbar">
+
+        <div class="explorer-search">
+
+            <span class="explorer-search-icon">
+                ⌕
+            </span>
+
+            <input
+                type="text"
+                id="explorerSearch"
+                placeholder="Search your dataset..."
+                autocomplete="off">
+
+        </div>
+
+
+        <div class="explorer-controls">
+
+            <button
+                type="button"
+                class="explorer-control-button"
+                id="explorerReset">
+
+                Reset
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- DATASET META -->
+
+    <div class="explorer-meta">
+
+        <div class="explorer-meta-item">
+
+            <span class="explorer-meta-icon">
+                ◈
+            </span>
+
+            <div>
+
+                <span>
+                    TOTAL ROWS
+                </span>
+
+                <strong id="explorerTotalRows">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="explorer-meta-item">
+
+            <span class="explorer-meta-icon">
+                ▦
+            </span>
+
+            <div>
+
+                <span>
+                    COLUMNS
+                </span>
+
+                <strong id="explorerTotalColumns">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="explorer-meta-item">
+
+            <span class="explorer-meta-icon">
+                ◉
+            </span>
+
+            <div>
+
+                <span>
+                    SHOWING
+                </span>
+
+                <strong id="explorerShowingRows">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="explorer-meta-item">
+
+            <span class="explorer-meta-icon">
+                ✦
+            </span>
+
+            <div>
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong id="explorerStatus">
+                    Loading
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TABLE -->
+
+    <div class="explorer-table-card">
+
+        <div class="explorer-table-wrapper"
+             id="explorerTableWrapper">
+
+            <div class="explorer-loading">
+
+                <div class="explorer-loading-row"></div>
+                <div class="explorer-loading-row"></div>
+                <div class="explorer-loading-row"></div>
+                <div class="explorer-loading-row"></div>
+                <div class="explorer-loading-row"></div>
+
+                <p>
+                    FINEXA is loading your dataset...
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAGINATION -->
+
+    <div class="explorer-pagination"
+         id="explorerPagination"
+         style="display:none;">
+
+        <button
+            type="button"
+            class="explorer-page-button"
+            id="explorerPrev">
+
+            ← Previous
+
+        </button>
+
+
+        <div class="explorer-page-info">
+
+            Page
+            <strong id="explorerCurrentPage">
+                1
+            </strong>
+            of
+            <strong id="explorerTotalPages">
+                1
+            </strong>
+
+        </div>
+        <button
+            type="button"
+            class="explorer-page-button"
+            id="explorerNext">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <!-- EMPTY STATE -->
+
+    <div class="explorer-empty-state"
+         id="explorerEmptyState"
+         style="display:none;">
+
+        <div class="explorer-empty-icon">
+            ◌
+        </div>
+
+        <h3>
+            No Matching Data
+        </h3>
+
+        <p>
+            FINEXA could not find rows matching your search.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+            <!-- =================================================
+                 FINAL ACTIONS — PART 8
+            ================================================== -->
+
+            <!-- =========================================================
+     PART 7 — SCHEMA + DATA COMPOSITION
+========================================================= -->
+
+<section class="result-section schema-section"
+         id="columnsSection">
+
+    <!-- SECTION HEADER -->
+
+    <div class="section-heading-row schema-heading">
+
+        <div>
+
+            <span class="section-eyebrow">
+                DATA STRUCTURE
+            </span>
+
+            <h2>
+                Understand Your <span>Dataset</span>
+            </h2>
+
+            <p>
+                FINEXA automatically maps your dataset structure
+                and reveals how its values are distributed.
+            </p>
+
+        </div>
+
+
+        <div class="schema-live-indicator">
+
+            <span class="schema-live-dot"></span>
+
+            SCHEMA ANALYZED
+
+        </div>
+
+    </div>
+
+
+    <!-- SCHEMA OVERVIEW -->
+
+    <div class="schema-overview">
+
+        <div class="schema-overview-card">
+
+            <div class="schema-overview-icon">
+                ▦
+            </div>
+
+            <div>
+
+                <span>
+                    TOTAL COLUMNS
+                </span>
+
+                <strong id="schemaColumnCount">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="schema-overview-card">
+
+            <div class="schema-overview-icon">
+                ◈
+            </div>
+
+            <div>
+
+                <span>
+                    NUMERIC FIELDS
+                </span>
+
+                <strong id="schemaNumericCount">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="schema-overview-card">
+
+            <div class="schema-overview-icon">
+                Aa
+            </div>
+
+            <div>
+
+                <span>
+                    TEXT FIELDS
+                </span>
+
+                <strong id="schemaTextCount">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="schema-overview-card">
+
+            <div class="schema-overview-icon">
+                ◷
+            </div>
+
+            <div>
+
+                <span>
+                    DATE FIELDS
+                </span>
+
+                <strong id="schemaDateCount">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCHEMA + PIE -->
+
+    <div class="schema-content-grid">
+
+
+        <!-- SCHEMA TABLE -->
+
+        <article class="schema-table-card">
+
+            <div class="schema-card-header">
+
+                <div>
+
+                    <span class="schema-card-type">
+                        DATA SCHEMA
+                    </span>
+
+                    <h3>
+                        Column Intelligence
+                    </h3>
+
+                </div>
+
+
+                <div class="schema-card-icon">
+                    ◫
+                </div>
+
+            </div>
+
+
+            <div class="schema-table-wrapper"
+                 id="schemaTableWrapper">
+
+                <div class="schema-loading">
+
+                    <div class="schema-loading-row"></div>
+                    <div class="schema-loading-row"></div>
+                    <div class="schema-loading-row"></div>
+                    <div class="schema-loading-row"></div>
+
+                    <p>
+                        FINEXA is analyzing your columns...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PIE / DONUT -->
+
+        <article class="schema-composition-card">
+
+            <div class="schema-card-header">
+
+                <div>
+
+                    <span class="schema-card-type">
+                        DATA COMPOSITION
+                    </span>
+
+                    <h3 id="compositionTitle">
+                        Value Distribution
+                    </h3>
+
+                </div>
+
+
+                <div class="schema-card-icon">
+                    ◉
+                </div>
+
+            </div>
+            <div class="composition-chart-wrapper"
+                 id="compositionChartWrapper">
+
+                <div class="composition-loading">
+
+                    <div class="composition-loading-ring"></div>
+
+                    <p>
+                        FINEXA is finding a meaningful
+                        categorical distribution...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="composition-legend"
+                 id="compositionLegend">
+            </div>
+
+
+            <div class="composition-footer">
+
+                <span>
+
+                    <span class="composition-status-dot"></span>
+
+                    Based on uploaded data
+
+                </span>
+
+                <span id="compositionField">
+                    Auto detected
+                </span>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- NO SCHEMA DATA -->
+
+    <div class="schema-empty-state"
+         id="schemaEmptyState"
+         style="display:none;">
+
+        <div class="schema-empty-icon">
+            ◌
+        </div>
+
+        <h3>
+            Schema Information Unavailable
+        </h3>
+
+        <p>
+            FINEXA could not identify enough structural
+            information from this dataset.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PART 7 ENDS HERE -->
+
+
+<!-- =========================================================
+     PART 8 — AI ANALYST + FINEXA CHATBOT
+========================================================= -->
+
+<section class="result-section analyst-section"
+         id="analystSection">
+
+    <!-- SECTION HEADER -->
+
+    <div class="section-heading-row analyst-heading">
+
+        <div>
+
+            <span class="section-eyebrow">
+                FINEXA AI ANALYST
+            </span>
+
+            <h2>
+                Ask Your Data <span>Anything</span>
+            </h2>
+
+            <p>
+                FINEXA analyzes your uploaded dataset and
+                answers questions using the actual data.
+            </p>
+
+        </div>
+
+        <div class="analyst-live-indicator">
+
+            <span class="analyst-live-dot"></span>
+
+            AI ANALYST ONLINE
+
+        </div>
+
+    </div>
+
+
+    <!-- AI ANALYST OVERVIEW -->
+
+    <div class="analyst-overview-grid">
+
+        <article class="analyst-overview-card">
+
+            <div class="analyst-overview-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <span>
+                    DATA UNDERSTANDING
+                </span>
+
+                <strong>
+                    Automatic
+                </strong>
+
+                <p>
+                    FINEXA understands the structure
+                    of your uploaded dataset.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="analyst-overview-card">
+
+            <div class="analyst-overview-icon">
+                ≈
+            </div>
+
+            <div>
+
+                <span>
+                    SMART CALCULATIONS
+                </span>
+
+                <strong>
+                    Dynamic
+                </strong>
+
+                <p>
+                    Metrics are calculated directly
+                    from your actual data.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="analyst-overview-card">
+
+            <div class="analyst-overview-icon">
+                ◈
+            </div>
+
+            <div>
+
+                <span>
+                    DATA CONVERSATION
+                </span>
+
+                <strong>
+                    Interactive
+                </strong>
+
+                <p>
+                    Ask questions and explore your
+                    dataset through conversation.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- ANALYST + CHATBOT -->
+
+    <div class="analyst-chat-grid">
+
+
+        <!-- AI ANALYST -->
+
+        <article class="ai-analysis-card">
+
+            <div class="ai-analysis-header">
+
+                <div>
+
+                    <span class="ai-card-label">
+                        AI ANALYSIS
+                    </span>
+
+                    <h3>
+                        Dataset Intelligence
+                    </h3>
+
+                </div>
+
+                <div class="ai-analysis-icon">
+                    ✦
+                </div>
+
+            </div>
+
+
+            <!-- KEY FINDINGS -->
+
+            <div class="ai-findings-block">
+
+                <div class="ai-block-heading">
+
+                    <span>
+                        KEY FINDINGS
+                    </span>
+
+                    <span class="ai-block-status">
+                        GENERATED
+                    </span>
+
+                </div>
+
+
+                <div class="ai-findings-list"
+                     id="aiFindingsList">
+
+                    <div class="ai-loading-item">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="ai-loading-item">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="ai-loading-item">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECOMMENDATIONS -->
+
+            <div class="ai-recommendations-block">
+                <div class="ai-block-heading">
+
+                    <span>
+                        RECOMMENDATIONS
+                    </span>
+
+                    <span class="ai-block-status">
+                        DATA DRIVEN
+                    </span>
+
+                </div>
+
+
+                <div class="ai-recommendations-list"
+                     id="aiRecommendationsList">
+
+                    <div class="ai-loading-item">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="ai-loading-item">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ANALYST STATUS -->
+
+            <div class="ai-analysis-footer">
+
+                <div>
+
+                    <span class="ai-footer-dot"></span>
+
+                    <span>
+                        Analysis based on uploaded data
+                    </span>
+
+                </div>
+
+                <span id="aiAnalysisStatus">
+                    Processing...
+                </span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- FINEXA CHATBOT -->
+
+        <article class="finexa-chat-card">
+
+
+            <!-- CHAT HEADER -->
+
+            <div class="finexa-chat-header">
+
+                <div class="finexa-chat-identity">
+
+                    <div class="finexa-bot-avatar">
+
+                        <span class="bot-core">
+                            ✦
+                        </span>
+
+                        <span class="bot-pulse"></span>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="finexa-bot-label">
+                            FINEXA
+                        </span>
+
+                        <h3>
+                            Data Analyst
+                        </h3>
+
+                        <span class="finexa-bot-status">
+
+                            <span></span>
+
+                            Online
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="finexa-chat-badge">
+                    AI
+                </div>
+
+            </div>
+
+
+            <!-- CHAT MESSAGES -->
+
+            <div class="finexa-chat-messages"
+                 id="finexaChatMessages">
+
+
+                <!-- FIXED WELCOME MESSAGE -->
+
+                <div class="chat-message bot-message">
+
+                    <div class="chat-message-avatar">
+                        ✦
+                    </div>
+
+                    <div class="chat-message-content">
+
+                        <span class="chat-message-name">
+                            FINEXA
+                        </span>
+
+                        <div class="chat-bubble">
+                            Hi I'm Finexa how can I help you
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- SUGGESTED QUESTIONS -->
+
+            <div class="finexa-suggestions"
+                 id="finexaSuggestions">
+
+                <button type="button"
+                        class="finexa-suggestion">
+                    What is the average?
+                </button>
+
+                <button type="button"
+                        class="finexa-suggestion">
+                    What is the highest value?
+                </button>
+
+                <button type="button"
+                        class="finexa-suggestion">
+                    How many records are there?
+                </button>
+
+            </div>
+
+
+            <!-- CHAT INPUT -->
+
+            <div class="finexa-chat-input-area">
+
+                <div class="finexa-chat-input-wrapper">
+
+                    <input
+                        type="text"
+                        id="finexaChatInput"
+                        placeholder="Ask FINEXA about your data..."
+                        autocomplete="off"
+                    >
+                    <button
+                        type="button"
+                        id="finexaChatSend"
+                        class="finexa-chat-send"
+                        aria-label="Send message">
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <div class="finexa-chat-input-hint">
+
+                    <span>
+                        FINEXA answers using your uploaded dataset
+                    </span>
+
+                    <span>
+                        ↵ Send
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- CHATBOT CAPABILITIES -->
+
+    <div class="analyst-capabilities">
+
+        <div class="capability-item">
+
+            <span class="capability-icon">
+                ≈
+            </span>
+
+            <div>
+
+                <strong>
+                    Average & Mean
+                </strong>
+
+                <span>
+                    Calculate values from your data
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="capability-item">
+
+            <span class="capability-icon">
+                ↗
+            </span>
+
+            <div>
+
+                <strong>
+                    Highest & Lowest
+                </strong>
+
+                <span>
+                    Identify important extremes
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="capability-item">
+
+            <span class="capability-icon">
+                ◈
+            </span>
+
+            <div>
+
+                <strong>
+                    Dataset Questions
+                </strong>
+
+                <span>
+                    Ask natural questions about data
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="capability-item">
+
+            <span class="capability-icon">
+                ✦
+            </span>
+
+            <div>
+
+                <strong>
+                    Smart Insights
+                </strong>
+
+                <span>
+                    Discover meaningful patterns
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- EMPTY STATE -->
+
+    <div class="analyst-empty-state"
+         id="analystEmptyState"
+         style="display:none;">
+
+        <div class="analyst-empty-icon">
+            ◌
+        </div>
+
+        <h3>
+            AI Analyst Unavailable
+        </h3>
+
+        <p>
+            FINEXA could not generate analyst insights
+            from the uploaded dataset.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     YOUR EXISTING FOOTER STARTS AFTER PART 8
+========================================================= -->
+
+<!-- =========================================================
+     PART 9 — BRANDED REPORT + ACTION CENTER
+========================================================= -->
+
+<section class="result-section actions-section"
+         id="actionsSection">
+
+    <div class="section-heading-row actions-heading">
+
+        <div>
+
+            <span class="section-eyebrow">
+                REPORT & ACTIONS
+            </span>
+
+            <h2>
+                Your Analysis,
+                <span>Professionally Delivered</span>
+            </h2>
+
+            <p>
+                Generate a professionally branded FINEXA
+                analysis report using your actual dataset.
+            </p>
+
+        </div>
+
+        <div class="actions-live-indicator">
+
+            <span class="actions-live-dot"></span>
+
+            REPORT READY
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         BRANDED REPORT PREVIEW
+    ====================================================== -->
+
+    <article class="report-preview-card">
+
+        <div class="report-preview-glow"></div>
+
+
+        <!-- REPORT HEADER -->
+
+        <div class="report-preview-header">
+
+            <div class="report-company">
+
+                <img
+                    src="{{ url_for('static', filename='css/logo.png') }}"
+                    alt="Auroun DataSYN Logo"
+                    class="report-logo"
+                >
+
+                <div class="report-company-text">
+
+                    <strong>
+                        Auroun DataSYN
+                    </strong>
+
+                    <span>
+                        Smart Data & Analytics
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-product">
+
+                <strong>
+                    FINEXA
+                </strong>
+
+                <span>
+                    Smart Financial Analytics Platform
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="report-preview-divider"></div>
+
+
+        <!-- REPORT TITLE -->
+
+        <div class="report-preview-title">
+
+            <span>
+                OFFICIAL ANALYSIS REPORT
+            </span>
+
+            <h3>
+                FINEXA Data Intelligence Report
+            </h3>
+
+            <p>
+                A structured analysis generated from
+                your uploaded dataset.
+            </p>
+
+        </div>
+
+
+        <!-- REPORT META -->
+
+        <div class="report-meta-grid">
+
+            <div class="report-meta-item">
+
+                <span>
+                    DATASET
+                </span>
+
+                <strong id="reportPreviewDataset">
+                    Uploaded Dataset
+                </strong>
+
+            </div>
+
+
+            <div class="report-meta-item">
+
+                <span>
+                    ANALYSIS
+                </span>
+
+                <strong>
+                    FINEXA Intelligence
+                </strong>
+
+            </div>
+
+
+            <div class="report-meta-item">
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong class="report-ready-text">
+                    Complete
+                </strong>
+
+            </div>
+
+
+            <div class="report-meta-item">
+
+                <span>
+                    PLATFORM
+                </span>
+
+                <strong>
+                    Auroun DataSYN
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- REPORT CONTENT PREVIEW -->
+
+        <div class="report-preview-content">
+
+            <div class="report-preview-feature">
+
+                <div class="report-preview-feature-icon">
+                    ◈
+                </div>
+
+                <div>
+
+                    <strong>
+                        Dynamic Analysis
+                    </strong>
+
+                    <span>
+                        Generated from your actual dataset
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-preview-feature">
+                <div class="report-preview-feature-icon">
+                    ≈
+                </div>
+
+                <div>
+
+                    <strong>
+                        Intelligent KPIs
+                    </strong>
+
+                    <span>
+                        Automatically detected metrics
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-preview-feature">
+
+                <div class="report-preview-feature-icon">
+                    ✦
+                </div>
+
+                <div>
+
+                    <strong>
+                        AI Insights
+                    </strong>
+
+                    <span>
+                        Findings and recommendations included
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-preview-feature">
+
+                <div class="report-preview-feature-icon">
+                    ↗
+                </div>
+
+                <div>
+
+                    <strong>
+                        Visual Analytics
+                    </strong>
+
+                    <span>
+                        Charts generated from your data
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- REPORT BRANDING -->
+
+        <div class="report-preview-footer">
+
+            <div>
+
+                <strong>
+                    Arun Kumar Saxena
+                </strong>
+
+                <span>
+                    Chief Managing Director
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Powered by Auroun DataSYN
+                </strong>
+
+                <span>
+                    FINEXA Smart Financial Analytics Platform
+                </span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <!-- =====================================================
+         ACTION CARDS
+    ====================================================== -->
+
+    <div class="actions-grid">
+
+
+        <!-- DOWNLOAD REPORT -->
+
+        <article class="action-card action-report-card">
+
+            <div class="action-card-glow"></div>
+
+
+            <div class="action-card-top">
+
+                <div class="action-icon">
+                    ⇩
+                </div>
+
+                <span class="action-status">
+                    PDF REPORT
+                </span>
+
+            </div>
+
+
+            <div class="action-card-content">
+
+                <h3>
+                    Download FINEXA Report
+                </h3>
+
+                <p>
+                    Download a professionally formatted
+                    FINEXA report with your company branding,
+                    logo, analytics, charts and insights.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="action-button primary-action-button"
+                id="downloadReportButton">
+
+                <span>
+                    Download Branded Report
+                </span>
+
+                <strong>
+                    →
+                </strong>
+
+            </button>
+
+        </article>
+
+
+        <!-- EXPORT DATA -->
+
+        <article class="action-card">
+
+            <div class="action-card-top">
+
+                <div class="action-icon">
+                    ↗
+                </div>
+
+                <span class="action-status">
+                    DATA EXPORT
+                </span>
+
+            </div>
+
+
+            <div class="action-card-content">
+
+                <h3>
+                    Export Dataset
+                </h3>
+
+                <p>
+                    Export the analyzed dataset for
+                    continued use outside FINEXA.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="action-button"
+                id="exportDataButton">
+
+                <span>
+                    Export Data
+                </span>
+
+                <strong>
+                    →
+                </strong>
+
+            </button>
+            </article>
+
+
+        <!-- NEW ANALYSIS -->
+
+        <article class="action-card">
+
+            <div class="action-card-top">
+
+                <div class="action-icon">
+                    +
+                </div>
+
+                <span class="action-status">
+                    NEW ANALYSIS
+                </span>
+
+            </div>
+
+
+            <div class="action-card-content">
+
+                <h3>
+                    Analyze New Dataset
+                </h3>
+
+                <p>
+                    Upload another Excel, CSV or JSON
+                    dataset and begin a fresh analysis.
+                </p>
+
+            </div>
+
+
+            <a
+                href="/upload"
+                class="action-button">
+
+                <span>
+                    New Analysis
+                </span>
+
+                <strong>
+                    →
+                </strong>
+
+            </a>
+
+        </article>
+
+
+        <!-- HOME -->
+
+        <article class="action-card">
+
+            <div class="action-card-top">
+
+                <div class="action-icon">
+                    ⌂
+                </div>
+
+                <span class="action-status">
+                    FINEXA
+                </span>
+
+            </div>
+
+
+            <div class="action-card-content">
+
+                <h3>
+                    Return to FINEXA
+                </h3>
+
+                <p>
+                    Return to the FINEXA platform and
+                    explore your analytics experience again.
+                </p>
+
+            </div>
+
+
+            <a
+                href="/"
+                class="action-button">
+
+                <span>
+                    Back to Home
+                </span>
+
+                <strong>
+                    →
+                </strong>
+
+            </a>
+
+        </article>
+
+    </div>
+
+
+    <!-- =====================================================
+         ANALYSIS COMPLETE STRIP
+    ====================================================== -->
+
+    <div class="analysis-ready-strip">
+
+        <div class="analysis-ready-left">
+
+            <div class="analysis-ready-icon">
+                ✦
+            </div>
+
+
+            <div>
+
+                <span>
+                    FINEXA ANALYSIS COMPLETE
+                </span>
+
+                <strong>
+                    Your professional report is ready to generate.
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="analysis-ready-meta">
+
+            <div>
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong>
+                    READY
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    BRAND
+                </span>
+
+                <strong>
+                    AUROUN DATASYN
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         EMPTY STATE
+    ====================================================== -->
+
+    <div
+        class="actions-empty-state"
+        id="actionsEmptyState"
+        style="display:none;">
+
+        <div class="actions-empty-icon">
+            ◌
+        </div>
+
+        <h3>
+            Report Unavailable
+        </h3>
+
+        <p>
+            Complete a dataset analysis before
+            generating the FINEXA report.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+        <!-- =================================================
+     PREMIUM FOOTER
+================================================== -->
+
+<footer class="result-footer">
+
+    <div class="result-footer-main">
+
+        <!-- BRAND -->
+        <div class="footer-brand-block">
+
+            <img
+                src="{{ url_for('static', filename='css/logo.png') }}"
+                alt="Auroun DataSYN Logo"
+                class="footer-logo"
+            >
+
+            <div class="footer-brand-text">
+
+                <strong>
+                    FINEXA
+                </strong>
+
+                <span>
+                    Smart Financial Analytics Platform
+                </span>
+
+                <small>
+                    by Auroun DataSYN
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- OWNER -->
+        <div class="footer-owner-block">
+
+            <span class="footer-label">
+                BUILT &amp; POWERED BY
+            </span>
+
+            <strong>
+                Arun Kumar Saxena
+            </strong>
+
+            <span>
+                Chief Managing Director
+            </span>
+
+            <small>
+                Auroun DataSYN
+            </small>
+
+        </div>
+
+
+        <!-- PLATFORM -->
+        <div class="footer-platform-block">
+
+            <span class="footer-label">
+                PLATFORM
+            </span>
+
+            <strong>
+                FINEXA
+            </strong>
+
+            <span>
+                Intelligent Data Analytics
+            </span>
+
+            <span class="footer-status">
+                <i></i>
+                ANALYSIS COMPLETE
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- DIVIDER -->
+
+    <div class="footer-divider"></div>
+
+
+    <!-- BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <div class="footer-powered">
+
+            <span>
+                Powered by
+            </span>
+
+            <strong>
+                Auroun DataSYN
+            </strong>
+
+        </div>
+
+
+        <div class="footer-copy">
+
+            © 2026 Auroun DataSYN.
+            All rights reserved.
+
+        </div>
+
+
+        <div class="footer-signature">
+
+            FINEXA
+            <span>•</span>
+            Smart Financial Analytics Platform
+
+        </div>
+
+    </div>
+
+</footer>
+
+</div>
+
+
+    <!-- =====================================================
+         RESULT JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="{{ url_for('static', filename='js/result.js') }}"
+    ></script>
+
+</body>
+
+</html>
