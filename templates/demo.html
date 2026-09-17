@@ -1,0 +1,2582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="FINEXA — Smart Financial Analytics Dashboard by Auroun DataSYN"
+    >
+
+    <title>
+        FINEXA | Financial Intelligence Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/demo.css') }}"
+    >
+
+</head>
+
+
+<body class="demo-page">
+
+
+    <!-- =====================================================
+         DASHBOARD LAYOUT
+         ===================================================== -->
+
+    <div class="dashboard-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside class="dashboard-sidebar">
+
+
+            <!-- BRAND -->
+
+            <div class="dashboard-brand">
+
+                <div class="dashboard-logo">
+
+                    <img
+                        src="{{ url_for('static', filename='css/logo.png') }}"
+                        alt="Auroun DataSYN Logo"
+                    >
+
+                </div>
+
+
+                <div class="dashboard-brand-text">
+
+                    <strong>
+                        FINEXA
+                    </strong>
+
+                    <span>
+                        by Auroun DataSYN
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="dashboard-navigation">
+
+                <span class="dashboard-nav-label">
+                    WORKSPACE
+                </span>
+
+
+                <a
+                    href="#overview"
+                    class="dashboard-nav-link active"
+                >
+
+                    <span class="nav-icon">
+                        ◈
+                    </span>
+
+                    <span>
+                        Overview
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#analytics"
+                    class="dashboard-nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ◫
+                    </span>
+
+                    <span>
+                        Analytics
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#insights"
+                    class="dashboard-nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ✦
+                    </span>
+
+                    <span>
+                        Insights
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#reports"
+                    class="dashboard-nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ▤
+                    </span>
+
+                    <span>
+                        Reports
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#health"
+                    class="dashboard-nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ◉
+                    </span>
+
+                    <span>
+                        Financial Health
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- SIDEBAR STATUS -->
+
+            <div class="dashboard-sidebar-status">
+
+                <div class="status-orb"></div>
+
+                <div>
+
+                    <strong>
+                        DEMO MODE
+                    </strong>
+
+                    <span>
+                        FINEXA Preview
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="dashboard-sidebar-footer">
+
+                <a href="/">
+                    ← Back to FINEXA
+                </a>
+
+            </div>
+
+
+        </aside>
+        <!-- =================================================
+             MAIN DASHBOARD
+             ================================================= -->
+
+        <main class="dashboard-main">
+
+
+            <!-- =================================================
+                 TOP HEADER
+                 ================================================= -->
+
+            <header class="dashboard-header">
+
+
+                <div class="dashboard-header-content">
+
+                    <span class="dashboard-eyebrow">
+                        FINANCIAL INTELLIGENCE
+                    </span>
+
+                    <h1>
+                        Dashboard Overview
+                    </h1>
+
+                    <p>
+                        Monitor your financial performance,
+                        understand key signals, and make
+                        better decisions.
+                    </p>
+
+                </div>
+
+
+                <div class="dashboard-header-actions">
+
+
+                    <div class="dashboard-live">
+
+                        <span class="live-dot"></span>
+
+                        LIVE ANALYSIS
+
+                    </div>
+
+
+                    <div class="dashboard-profile">
+
+                        <span>
+                            AS
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 OVERVIEW
+                 ================================================= -->
+
+            <section
+                class="dashboard-section"
+                id="overview"
+            >
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>
+                            OVERVIEW
+                        </span>
+
+                        <h2>
+                            Financial Performance
+                        </h2>
+
+                    </div>
+
+
+                    <div class="period-selector">
+
+                        <button class="period-active">
+                            This Period
+                        </button>
+
+                        <button>
+                            Previous
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- KPI GRID -->
+
+                <div class="dashboard-kpi-grid">
+
+
+                    <!-- REVENUE -->
+
+                    <article class="dashboard-kpi-card">
+
+                        <div class="kpi-top">
+
+                            <span class="kpi-label">
+                                TOTAL REVENUE
+                            </span>
+
+                            <span class="kpi-icon">
+                                ↗
+                            </span>
+
+                        </div>
+
+
+                        <div class="kpi-value">
+                            ₹12.84L
+                        </div>
+
+
+                        <div class="kpi-bottom">
+
+                            <span class="kpi-positive">
+                                +18.6%
+                            </span>
+
+                            <span>
+                                vs previous period
+                            </span>
+
+                        </div>
+
+
+                        <div class="kpi-sparkline revenue-spark">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- EXPENSE -->
+
+                    <article class="dashboard-kpi-card">
+
+                        <div class="kpi-top">
+
+                            <span class="kpi-label">
+                                TOTAL EXPENSES
+                            </span>
+                            <span class="kpi-icon">
+                                ↘
+                            </span>
+
+                        </div>
+
+
+                        <div class="kpi-value">
+                            ₹9.66L
+                        </div>
+
+
+                        <div class="kpi-bottom">
+
+                            <span class="kpi-neutral">
+                                +4.2%
+                            </span>
+
+                            <span>
+                                vs previous period
+                            </span>
+
+                        </div>
+
+
+                        <div class="kpi-sparkline expense-spark">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PROFIT -->
+
+                    <article class="dashboard-kpi-card kpi-featured">
+
+                        <div class="kpi-top">
+
+                            <span class="kpi-label">
+                                NET PROFIT
+                            </span>
+
+                            <span class="kpi-icon">
+                                ✦
+                            </span>
+
+                        </div>
+
+
+                        <div class="kpi-value">
+                            ₹3.18L
+                        </div>
+
+
+                        <div class="kpi-bottom">
+
+                            <span class="kpi-positive">
+                                +22.4%
+                            </span>
+
+                            <span>
+                                strong growth
+                            </span>
+
+                        </div>
+
+
+                        <div class="kpi-sparkline profit-spark">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- HEALTH -->
+
+                    <article class="dashboard-kpi-card health-kpi">
+
+                        <div class="kpi-top">
+
+                            <span class="kpi-label">
+                                FINANCIAL HEALTH
+                            </span>
+
+                            <span class="kpi-icon">
+                                ◉
+                            </span>
+
+                        </div>
+
+
+                        <div class="health-kpi-value">
+
+                            <strong>
+                                87
+                            </strong>
+
+                            <span>
+                                /100
+                            </span>
+
+                        </div>
+
+
+                        <div class="kpi-bottom">
+
+                            <span class="kpi-positive">
+                                STRONG
+                            </span>
+
+                            <span>
+                                overall position
+                            </span>
+
+                        </div>
+
+
+                        <div class="health-progress">
+
+                            <span></span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- QUICK SUMMARY -->
+
+                <div class="dashboard-summary-row">
+
+
+                    <div class="summary-item">
+
+                        <span>
+                            CASH FLOW
+                        </span>
+
+                        <strong>
+                            ₹2.18L
+                        </strong>
+                        <small class="summary-positive">
+                            Healthy
+                        </small>
+
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="summary-item">
+
+                        <span>
+                            PROFIT MARGIN
+                        </span>
+
+                        <strong>
+                            24.8%
+                        </strong>
+
+                        <small class="summary-positive">
+                            Improving
+                        </small>
+
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="summary-item">
+
+                        <span>
+                            DATA QUALITY
+                        </span>
+
+                        <strong>
+                            96%
+                        </strong>
+
+                        <small class="summary-positive">
+                            Excellent
+                        </small>
+
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="summary-item">
+
+                        <span>
+                            LAST ANALYSIS
+                        </span>
+
+                        <strong>
+                            Just now
+                        </strong>
+
+                        <small>
+                            Live dataset
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+    <!-- ============================================================
+     PART 2 — INTERACTIVE ANALYTICS
+     ============================================================ -->
+
+<section
+    class="dashboard-section analytics-section"
+    id="analytics"
+>
+
+    <div class="section-heading analytics-heading">
+
+        <div>
+            <span class="section-eyebrow">
+                ANALYTICS
+            </span>
+
+            <h2>
+                Financial Performance
+            </h2>
+
+            <p>
+                Explore revenue, expenses, profit and financial
+                movement across your selected period.
+            </p>
+        </div>
+
+        <div class="analytics-period">
+
+            <button class="analytics-period-active">
+                12M
+            </button>
+
+            <button>
+                6M
+            </button>
+
+            <button>
+                3M
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         ANALYTICS KPI STRIP
+         ======================================================== -->
+
+    <div class="analytics-kpi-grid">
+
+
+        <!-- REVENUE -->
+
+        <article class="analytics-card analytics-revenue-card">
+
+            <div class="analytics-card-top">
+
+                <div class="analytics-card-label">
+                    REVENUE
+                </div>
+
+                <div class="analytics-card-icon">
+                    ↗
+                </div>
+
+            </div>
+
+            <div class="analytics-card-value">
+                ₹12.84L
+            </div>
+
+            <div class="analytics-card-change positive">
+                +18.6%
+                <span>vs previous period</span>
+            </div>
+
+            <div class="analytics-mini-bars">
+
+                <span style="height: 38%;"></span>
+                <span style="height: 48%;"></span>
+                <span style="height: 44%;"></span>
+                <span style="height: 61%;"></span>
+                <span style="height: 57%;"></span>
+                <span style="height: 72%;"></span>
+                <span style="height: 68%;"></span>
+                <span style="height: 88%;"></span>
+
+            </div>
+
+        </article>
+
+
+        <!-- EXPENSE -->
+
+        <article class="analytics-card analytics-expense-card">
+
+            <div class="analytics-card-top">
+
+                <div class="analytics-card-label">
+                    EXPENSES
+                </div>
+
+                <div class="analytics-card-icon">
+                    ↘
+                </div>
+
+            </div>
+
+            <div class="analytics-card-value">
+                ₹9.66L
+            </div>
+
+            <div class="analytics-card-change neutral">
+                +4.2%
+                <span>vs previous period</span>
+            </div>
+
+            <div class="analytics-mini-bars">
+
+                <span style="height: 52%;"></span>
+                <span style="height: 46%;"></span>
+                <span style="height: 58%;"></span>
+                <span style="height: 54%;"></span>
+                <span style="height: 63%;"></span>
+                <span style="height: 59%;"></span>
+                <span style="height: 68%;"></span>
+                <span style="height: 64%;"></span>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROFIT -->
+
+        <article class="analytics-card analytics-profit-card">
+
+            <div class="analytics-card-top">
+
+                <div class="analytics-card-label">
+                    NET PROFIT
+                </div>
+
+                <div class="analytics-card-icon">
+                    $
+                </div>
+
+            </div>
+
+            <div class="analytics-card-value">
+                ₹3.18L
+            </div>
+
+            <div class="analytics-card-change positive">
+                +22.4%
+                <span>vs previous period</span>
+            </div>
+
+            <div class="profit-progress">
+
+                <div class="profit-progress-track">
+                    <span></span>
+                </div>
+                <small>
+                    24.8% profit margin
+                </small>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- ========================================================
+         MAIN ANALYTICS AREA
+         ======================================================== -->
+
+    <div class="analytics-main-grid">
+
+
+        <!-- ====================================================
+             REVENUE VS EXPENSES
+             ==================================================== -->
+
+        <article class="chart-panel revenue-chart-panel">
+
+            <div class="chart-panel-header">
+
+                <div>
+
+                    <span class="chart-label">
+                        PERFORMANCE
+                    </span>
+
+                    <h3>
+                        Revenue vs Expenses
+                    </h3>
+
+                    <p>
+                        Monthly financial movement
+                    </p>
+
+                </div>
+
+                <div class="chart-legend">
+
+                    <span class="legend-item revenue-legend">
+                        <i></i>
+                        Revenue
+                    </span>
+
+                    <span class="legend-item expense-legend">
+                        <i></i>
+                        Expenses
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="large-chart">
+
+                <div class="chart-y-axis">
+
+                    <span>₹14L</span>
+                    <span>₹12L</span>
+                    <span>₹10L</span>
+                    <span>₹8L</span>
+                    <span>₹6L</span>
+                    <span>₹4L</span>
+                    <span>₹2L</span>
+                    <span>₹0</span>
+
+                </div>
+
+
+                <div class="chart-area">
+
+                    <div class="chart-grid-lines">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <!-- REVENUE LINE -->
+
+                    <svg
+                        class="analytics-line revenue-line"
+                        viewBox="0 0 800 300"
+                        preserveAspectRatio="none"
+                    >
+
+                        <defs>
+
+                            <linearGradient
+                                id="revenueGradient"
+                                x1="0"
+                                y1="0"
+                                x2="0"
+                                y2="1"
+                            >
+
+                                <stop
+                                    offset="0%"
+                                    stop-opacity="0.35"
+                                />
+
+                                <stop
+                                    offset="100%"
+                                    stop-opacity="0"
+                                />
+
+                            </linearGradient>
+
+                        </defs>
+
+
+                        <path
+                            class="revenue-area"
+                            d="
+                            M0 230
+                            L100 205
+                            L200 215
+                            L300 165
+                            L400 178
+                            L500 125
+                            L600 145
+                            L700 90
+                            L800 65
+                            L800 300
+                            L0 300
+                            Z
+                            "
+                        ></path>
+
+
+                        <path
+                        class="revenue-path"
+                            d="
+                            M0 230
+                            L100 205
+                            L200 215
+                            L300 165
+                            L400 178
+                            L500 125
+                            L600 145
+                            L700 90
+                            L800 65
+                            "
+                        ></path>
+
+
+                        <circle
+                            cx="800"
+                            cy="65"
+                            r="6"
+                            class="chart-point-main"
+                        ></circle>
+
+                    </svg>
+
+
+                    <!-- EXPENSE LINE -->
+
+                    <svg
+                        class="analytics-line expense-line"
+                        viewBox="0 0 800 300"
+                        preserveAspectRatio="none"
+                    >
+
+                        <path
+                            class="expense-path"
+                            d="
+                            M0 250
+                            L100 235
+                            L200 242
+                            L300 215
+                            L400 225
+                            L500 195
+                            L600 202
+                            L700 178
+                            L800 165
+                            "
+                        ></path>
+
+                    </svg>
+
+
+                    <!-- CHART HOVER POINTS -->
+
+                    <div
+                        class="chart-hover-point point-1"
+                        data-month="Jan"
+                        data-revenue="₹8.2L"
+                        data-expense="₹6.4L"
+                    ></div>
+
+                    <div
+                        class="chart-hover-point point-2"
+                        data-month="Mar"
+                        data-revenue="₹9.4L"
+                        data-expense="₹7.1L"
+                    ></div>
+
+                    <div
+                        class="chart-hover-point point-3"
+                        data-month="Jun"
+                        data-revenue="₹10.8L"
+                        data-expense="₹8.2L"
+                    ></div>
+
+                    <div
+                        class="chart-hover-point point-4"
+                        data-month="Sep"
+                        data-revenue="₹11.6L"
+                        data-expense="₹8.9L"
+                    ></div>
+
+                    <div
+                        class="chart-hover-point point-5"
+                        data-month="Dec"
+                        data-revenue="₹12.84L"
+                        data-expense="₹9.66L"
+                    ></div>
+
+
+                    <div class="chart-tooltip">
+
+                        <strong>
+                            December
+                        </strong>
+
+                        <span>
+                            Revenue ₹12.84L
+                        </span>
+
+                        <span>
+                            Expenses ₹9.66L
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-x-axis">
+
+                    <span>Jan</span>
+                    <span>Mar</span>
+                    <span>Jun</span>
+                    <span>Sep</span>
+                    <span>Dec</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- ====================================================
+             PROFIT ANALYSIS
+             ==================================================== -->
+
+        <article class="chart-panel profit-analysis-panel">
+
+            <div class="chart-panel-header">
+
+                <div>
+
+                    <span class="chart-label">
+                        PROFITABILITY
+                    </span>
+
+                    <h3>
+                        Profit Analysis
+                    </h3>
+
+                </div>
+                <span class="chart-status">
+                    IMPROVING
+                </span>
+
+            </div>
+
+
+            <div class="profit-visual">
+
+                <div class="profit-ring">
+
+                    <div class="profit-ring-inner">
+
+                        <strong>
+                            24.8%
+                        </strong>
+
+                        <span>
+                            Margin
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profit-details">
+
+                    <div class="profit-detail">
+
+                        <span>
+                            Revenue
+                        </span>
+
+                        <strong>
+                            ₹12.84L
+                        </strong>
+
+                    </div>
+
+                    <div class="profit-detail">
+
+                        <span>
+                            Expenses
+                        </span>
+
+                        <strong>
+                            ₹9.66L
+                        </strong>
+
+                    </div>
+
+                    <div class="profit-detail profit-detail-highlight">
+
+                        <span>
+                            Net Profit
+                        </span>
+
+                        <strong>
+                            ₹3.18L
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="profit-insight">
+
+                <div class="profit-insight-icon">
+                    ↗
+                </div>
+
+                <div>
+
+                    <strong>
+                        Profit momentum is positive
+                    </strong>
+
+                    <span>
+                        Net profit increased by 22.4%
+                        compared with the previous period.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- ========================================================
+         MONTHLY TREND
+         ======================================================== -->
+
+    <article class="chart-panel monthly-trend-panel">
+
+        <div class="chart-panel-header">
+
+            <div>
+
+                <span class="chart-label">
+                    MONTHLY TREND
+                </span>
+
+                <h3>
+                    Financial Movement
+                </h3>
+
+            </div>
+
+            <div class="trend-summary">
+
+                <span>
+                    YEARLY GROWTH
+                </span>
+
+                <strong>
+                    +18.6%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="monthly-chart">
+
+            <div class="monthly-column">
+
+                <div
+                    class="monthly-bar"
+                    style="height: 42%;"
+                ></div>
+
+                <span>Jan</span>
+
+            </div>
+
+            <div class="monthly-column">
+
+                <div
+                    class="monthly-bar"
+                    style="height: 48%;"
+                ></div>
+
+                <span>Feb</span>
+
+            </div>
+
+            <div class="monthly-column">
+
+                <div
+                    class="monthly-bar"
+                    style="height: 45%;"
+                ></div>
+
+                <span>Mar</span>
+
+            </div>
+
+            <div class="monthly-column">
+
+                <div
+                    class="monthly-bar"
+                    style="height: 56%;"
+                ></div>
+
+                <span>Apr</span>
+
+            </div>
+
+            <div class="monthly-column">
+
+                <div
+                    class="monthly-bar"
+                    style="height: 53%;"
+                ></div>
+
+                <span>May</span>
+
+            </div>
+
+            <div class="monthly-column">
+
+                <div
+                    class="monthly-bar"
+                    style="height: 64%;"
+                ></div>
+
+                <span>Jun</span>
+
+            </div>
+            <div class="monthly-column">
+
+                <div
+                    class="monthly-bar"
+                    style="height: 61%;"
+                ></div>
+
+                <span>Jul</span>
+
+            </div>
+
+            <div class="monthly-column">
+
+                <div
+                    class="monthly-bar"
+                    style="height: 73%;"
+                ></div>
+
+                <span>Aug</span>
+
+            </div>
+
+            <div class="monthly-column">
+
+                <div
+                    class="monthly-bar"
+                    style="height: 69%;"
+                ></div>
+
+                <span>Sep</span>
+
+            </div>
+
+            <div class="monthly-column">
+
+                <div
+                    class="monthly-bar"
+                    style="height: 78%;"
+                ></div>
+
+                <span>Oct</span>
+
+            </div>
+
+            <div class="monthly-column">
+
+                <div
+                    class="monthly-bar"
+                    style="height: 82%;"
+                ></div>
+
+                <span>Nov</span>
+
+            </div>
+
+            <div class="monthly-column monthly-column-active">
+
+                <div
+                    class="monthly-bar"
+                    style="height: 94%;"
+                ></div>
+
+                <span>Dec</span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</section>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="{{ url_for('static', filename='js/demo.js') }}"
+    ></script>
+
+
+</body>
+
+</html>
+<!-- ============================================================
+     PART 3 — FINANCIAL HEALTH
+     ============================================================ -->
+
+<section
+    class="dashboard-section health-section"
+    id="financial-health"
+>
+
+    <div class="section-heading health-heading">
+
+        <div>
+
+            <span class="section-eyebrow">
+                FINANCIAL HEALTH
+            </span>
+
+            <h2>
+                Know Where Your Money Stands
+            </h2>
+
+            <p>
+                A clear view of your financial stability,
+                momentum, risk and overall performance.
+            </p>
+
+        </div>
+
+        <div class="health-score-badge">
+
+            <span>
+                OVERALL SCORE
+            </span>
+
+            <strong>
+                87
+            </strong>
+
+            <small>
+                / 100
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         HEALTH OVERVIEW
+         ======================================================== -->
+
+    <div class="health-overview-grid">
+
+
+        <!-- MAIN HEALTH SCORE -->
+
+        <article class="health-main-card">
+
+            <div class="health-card-label">
+                FINANCIAL HEALTH
+            </div>
+
+            <div class="health-score-visual">
+
+                <div class="health-large-ring">
+
+                    <div class="health-large-ring-inner">
+
+                        <strong>
+                            87
+                        </strong>
+
+                        <span>
+                            STRONG
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="health-main-message">
+                Your financial position is strong
+                with positive growth momentum.
+            </p>
+
+            <div class="health-status-line">
+
+                <span class="health-status-dot"></span>
+
+                Financial position stable
+
+            </div>
+
+        </article>
+
+
+        <!-- HEALTH FACTORS -->
+
+        <div class="health-factors-grid">
+
+
+            <article class="health-factor-card">
+
+                <div class="health-factor-top">
+
+                    <span>
+                        CASH FLOW
+                    </span>
+
+                    <div class="health-factor-icon">
+                        ↗
+                    </div>
+
+                </div>
+
+                <strong>
+                    HEALTHY
+                </strong>
+
+                <p>
+                    ₹2.18L available cash flow
+                </p>
+
+                <div class="factor-progress">
+                    <span style="width: 82%;"></span>
+                </div>
+
+            </article>
+
+
+            <article class="health-factor-card">
+
+                <div class="health-factor-top">
+
+                    <span>
+                        PROFITABILITY
+                    </span>
+
+                    <div class="health-factor-icon">
+                        %
+                    </div>
+
+                </div>
+
+                <strong>
+                    STRONG
+                </strong>
+
+                <p>
+                    24.8% current profit margin
+                </p>
+
+                <div class="factor-progress">
+                    <span style="width: 76%;"></span>
+                </div>
+
+            </article>
+
+
+            <article class="health-factor-card">
+
+                <div class="health-factor-top">
+
+                    <span>
+                        EXPENSE CONTROL
+                    </span>
+
+                    <div class="health-factor-icon">
+                        ✓
+                    </div>
+
+                </div>
+
+                <strong>
+                    STABLE
+                </strong>
+
+                <p>
+                    Expenses growing at 4.2%
+                </p>
+
+                <div class="factor-progress">
+                    <span style="width: 71%;"></span>
+                </div>
+
+            </article>
+            <article class="health-factor-card">
+
+                <div class="health-factor-top">
+
+                    <span>
+                        DATA QUALITY
+                    </span>
+
+                    <div class="health-factor-icon">
+                        ◆
+                    </div>
+
+                </div>
+
+                <strong>
+                    EXCELLENT
+                </strong>
+
+                <p>
+                    96% of financial data is clean
+                </p>
+
+                <div class="factor-progress">
+                    <span style="width: 96%;"></span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         HEALTH SIGNALS
+         ======================================================== -->
+
+    <div class="health-signals-panel">
+
+        <div class="health-signals-header">
+
+            <div>
+
+                <span class="chart-label">
+                    FINANCIAL SIGNALS
+                </span>
+
+                <h3>
+                    What Needs Your Attention
+                </h3>
+
+            </div>
+
+            <span class="health-signal-count">
+                3 SIGNALS
+            </span>
+
+        </div>
+
+
+        <div class="health-signals-list">
+
+
+            <div class="health-signal-item signal-positive">
+
+                <div class="signal-status-icon">
+                    ↗
+                </div>
+
+                <div class="signal-item-content">
+
+                    <strong>
+                        Revenue momentum is accelerating
+                    </strong>
+
+                    <span>
+                        Revenue increased 18.6% compared
+                        with the previous period.
+                    </span>
+
+                </div>
+
+                <span class="signal-tag">
+                    POSITIVE
+                </span>
+
+            </div>
+
+
+            <div class="health-signal-item signal-positive">
+
+                <div class="signal-status-icon">
+                    ✓
+                </div>
+
+                <div class="signal-item-content">
+
+                    <strong>
+                        Profitability remains strong
+                    </strong>
+
+                    <span>
+                        Current net profit margin stands
+                        at 24.8%.
+                    </span>
+
+                </div>
+
+                <span class="signal-tag">
+                    STABLE
+                </span>
+
+            </div>
+
+
+            <div class="health-signal-item signal-attention">
+
+                <div class="signal-status-icon">
+                    !
+                </div>
+
+                <div class="signal-item-content">
+
+                    <strong>
+                        Cash flow deserves monitoring
+                    </strong>
+
+                    <span>
+                        Continue monitoring outgoing expenses
+                        to protect available cash.
+                    </span>
+
+                </div>
+
+                <span class="signal-tag">
+                    REVIEW
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     PART 3 — INTELLIGENT INSIGHTS
+     ============================================================ -->
+
+<section
+    class="dashboard-section insights-section"
+    id="insights"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-eyebrow">
+                INTELLIGENT INSIGHTS
+            </span>
+
+            <h2>
+                From Numbers To Signals
+            </h2>
+
+            <p>
+                FINEXA highlights important financial patterns
+                so you can understand what matters faster.
+            </p>
+
+        </div>
+
+        <div class="insight-live-badge">
+
+            <span></span>
+
+            LIVE ANALYSIS
+
+        </div>
+
+    </div>
+
+
+    <div class="insights-grid">
+
+
+        <!-- PRIMARY INSIGHT -->
+        <article class="primary-insight-card">
+
+            <div class="insight-card-top">
+
+                <div class="insight-icon-large">
+                    ✦
+                </div>
+
+                <span>
+                    HIGH CONFIDENCE
+                </span>
+
+            </div>
+
+            <div class="insight-card-content">
+
+                <span class="insight-category">
+                    REVENUE PATTERN
+                </span>
+
+                <h3>
+                    Revenue momentum is trending upward
+                </h3>
+
+                <p>
+                    Your revenue has maintained a positive
+                    movement across the selected period,
+                    indicating stronger financial momentum.
+                </p>
+
+            </div>
+
+            <div class="insight-metric">
+
+                <div>
+
+                    <span>
+                        CURRENT GROWTH
+                    </span>
+
+                    <strong>
+                        +18.6%
+                    </strong>
+
+                </div>
+
+                <div class="insight-mini-line">
+                    ↗
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- INSIGHT CARDS -->
+
+        <div class="insight-list">
+
+
+            <article class="insight-item">
+
+                <div class="insight-item-icon">
+                    ₹
+                </div>
+
+                <div>
+
+                    <span>
+                        PROFITABILITY
+                    </span>
+
+                    <strong>
+                        Profit margin is improving
+                    </strong>
+
+                    <p>
+                        Net profit reached ₹3.18L.
+                    </p>
+
+                </div>
+
+                <span class="insight-arrow">
+                    →
+                </span>
+
+            </article>
+
+
+            <article class="insight-item">
+
+                <div class="insight-item-icon">
+                    ↘
+                </div>
+
+                <div>
+
+                    <span>
+                        EXPENSES
+                    </span>
+
+                    <strong>
+                        Expense growth remains controlled
+                    </strong>
+
+                    <p>
+                        Expenses increased only 4.2%.
+                    </p>
+
+                </div>
+
+                <span class="insight-arrow">
+                    →
+                </span>
+
+            </article>
+
+
+            <article class="insight-item insight-item-attention">
+
+                <div class="insight-item-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <span>
+                        ATTENTION
+                    </span>
+
+                    <strong>
+                        Monitor cash flow movement
+                    </strong>
+
+                    <p>
+                        Keep outgoing cash under review.
+                    </p>
+
+                </div>
+
+                <span class="insight-arrow">
+                    →
+                </span>
+
+            </article>
+
+        </div>
+
+    </div>
+
+
+    <div class="insight-bottom-message">
+
+        <span>
+            DATA
+        </span>
+
+        <i>→</i>
+
+        <span>
+            PATTERNS
+        </span>
+
+        <i>→</i>
+
+        <span>
+            SIGNALS
+        </span>
+
+        <i>→</i>
+
+        <strong>
+            BETTER DECISIONS
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     PART 3 — REPORTS
+     ============================================================ -->
+
+<section
+    class="dashboard-section reports-section"
+    id="reports"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-eyebrow">
+                REPORTS
+            </span>
+
+            <h2>
+                Your Financial Intelligence, Ready
+            </h2>
+
+            <p>
+                Turn your analysis into clear, structured
+                financial reports whenever you need them.
+            </p>
+            </div>
+
+    </div>
+
+
+    <div class="reports-grid">
+
+
+        <!-- REPORT PREVIEW -->
+
+        <article class="report-preview-card">
+
+            <div class="report-preview-header">
+
+                <div>
+
+                    <span>
+                        FINEXA
+                    </span>
+
+                    <strong>
+                        Financial Analysis Report
+                    </strong>
+
+                </div>
+
+                <div class="report-preview-icon">
+                    PDF
+                </div>
+
+            </div>
+
+
+            <div class="report-preview-body">
+
+                <div class="report-line report-line-large"></div>
+
+                <div class="report-line"></div>
+
+                <div class="report-line report-line-short"></div>
+
+
+                <div class="report-preview-metrics">
+
+                    <div>
+
+                        <span>
+                            REVENUE
+                        </span>
+
+                        <strong>
+                            ₹12.84L
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            PROFIT
+                        </span>
+
+                        <strong>
+                            ₹3.18L
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            HEALTH
+                        </span>
+
+                        <strong>
+                            87/100
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-preview-chart">
+
+                    <span style="height: 35%;"></span>
+                    <span style="height: 48%;"></span>
+                    <span style="height: 42%;"></span>
+                    <span style="height: 61%;"></span>
+                    <span style="height: 58%;"></span>
+                    <span style="height: 76%;"></span>
+                    <span style="height: 70%;"></span>
+                    <span style="height: 91%;"></span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- REPORT OPTIONS -->
+
+        <div class="report-options">
+
+
+            <article class="report-option">
+
+                <div class="report-option-icon">
+                    ↓
+                </div>
+
+                <div>
+
+                    <span>
+                        FINANCIAL REPORT
+                    </span>
+
+                    <strong>
+                        Complete Analysis
+                    </strong>
+
+                    <p>
+                        Revenue, expenses, profit and
+                        financial health.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="report-action"
+                >
+                    Generate
+                </button>
+
+            </article>
+
+
+            <article class="report-option">
+
+                <div class="report-option-icon">
+                    ◫
+                </div>
+
+                <div>
+
+                    <span>
+                        INSIGHT REPORT
+                    </span>
+
+                    <strong>
+                        Intelligence Summary
+                    </strong>
+
+                    <p>
+                        Important patterns and financial
+                        signals in one report.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="report-action"
+                >
+                    Generate
+                </button>
+
+            </article>
+
+
+            <article class="report-option">
+
+                <div class="report-option-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>
+                        HEALTH REPORT
+                    </span>
+
+                    <strong>
+                        Financial Health
+                    </strong>
+                    <p>
+                        Overall score, stability and
+                        attention areas.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="report-action"
+                >
+                    Generate
+                </button>
+
+            </article>
+
+        </div>
+
+    </div>
+
+
+    <div class="reports-cta">
+
+        <div>
+
+            <span>
+                FINEXA REPORTING
+            </span>
+
+            <strong>
+                Turn analysis into information
+                you can act on.
+            </strong>
+
+        </div>
+
+        <button
+            type="button"
+            class="reports-main-button"
+        >
+            Generate Report
+            <span>→</span>
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ============================================================
+     FINANCIAL HEALTH
+     ============================================================ -->
+
+<section class="dashboard-section health-section" id="financial-health">
+
+    <div class="section-heading health-heading">
+
+        <div>
+            <span class="section-eyebrow">
+                FINANCIAL HEALTH
+            </span>
+
+            <h2>
+                Know Where Your Money Stands
+            </h2>
+
+            <p>
+                A clear view of your financial stability,
+                momentum, risk and overall performance.
+            </p>
+        </div>
+
+        <div class="health-score-badge">
+
+            <span>
+                OVERALL SCORE
+            </span>
+
+            <strong>
+                87
+            </strong>
+
+            <small>
+                / 100
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- HEALTH OVERVIEW -->
+
+    <div class="health-overview-grid">
+
+        <!-- MAIN SCORE -->
+
+        <article class="health-main-card">
+
+            <div class="health-card-label">
+                FINANCIAL HEALTH
+            </div>
+
+            <div class="health-score-visual">
+
+                <div class="health-large-ring">
+
+                    <div class="health-large-ring-inner">
+
+                        <strong>
+                            87
+                        </strong>
+
+                        <span>
+                            STRONG
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="health-main-message">
+                Your financial position is strong
+                with positive growth momentum.
+            </p>
+
+            <div class="health-status-line">
+
+                <span class="health-status-dot"></span>
+
+                Financial position stable
+
+            </div>
+
+        </article>
+
+
+        <!-- HEALTH FACTORS -->
+
+        <div class="health-factors-grid">
+
+
+            <article class="health-factor-card">
+
+                <div class="health-factor-top">
+
+                    <span>
+                        CASH FLOW
+                    </span>
+
+                    <div class="health-factor-icon">
+                        ↗
+                    </div>
+
+                </div>
+
+                <strong>
+                    HEALTHY
+                </strong>
+
+                <p>
+                    ₹2.18L available cash flow
+                </p>
+
+                <div class="factor-progress">
+                    <span style="width: 82%;"></span>
+                </div>
+
+            </article>
+
+
+            <article class="health-factor-card">
+
+                <div class="health-factor-top">
+
+                    <span>
+                        PROFITABILITY
+                    </span>
+
+                    <div class="health-factor-icon">
+                        %
+                    </div>
+
+                </div>
+
+                <strong>
+                    STRONG
+                </strong>
+
+                <p>
+                    24.8% current profit margin
+                </p>
+
+                <div class="factor-progress">
+                    <span style="width: 76%;"></span>
+                </div>
+
+            </article>
+
+
+            <article class="health-factor-card">
+
+                <div class="health-factor-top">
+
+                    <span>
+                        EXPENSE CONTROL
+                    </span>
+
+                    <div class="health-factor-icon">
+                        ✓
+                    </div>
+
+                </div>
+
+                <strong>
+                    STABLE
+                </strong>
+
+                <p>
+                    Expenses growing at 4.2%
+                </p>
+
+                <div class="factor-progress">
+                    <span style="width: 71%;"></span>
+                </div>
+
+            </article>
+
+
+            <article class="health-factor-card">
+
+                <div class="health-factor-top">
+                    <span>
+                        DATA QUALITY
+                    </span>
+
+                    <div class="health-factor-icon">
+                        ◆
+                    </div>
+
+                </div>
+
+                <strong>
+                    EXCELLENT
+                </strong>
+
+                <p>
+                    96% of financial data is clean
+                </p>
+
+                <div class="factor-progress">
+                    <span style="width: 96%;"></span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+
+    <!-- FINANCIAL SIGNALS -->
+
+    <div class="health-signals-panel">
+
+        <div class="health-signals-header">
+
+            <div>
+
+                <span class="chart-label">
+                    FINANCIAL SIGNALS
+                </span>
+
+                <h3>
+                    What Needs Your Attention
+                </h3>
+
+            </div>
+
+            <span class="health-signal-count">
+                3 SIGNALS
+            </span>
+
+        </div>
+
+
+        <div class="health-signals-list">
+
+
+            <div class="health-signal-item signal-positive">
+
+                <div class="signal-status-icon">
+                    ↗
+                </div>
+
+                <div class="signal-item-content">
+
+                    <strong>
+                        Revenue momentum is accelerating
+                    </strong>
+
+                    <span>
+                        Revenue increased 18.6% compared
+                        with the previous period.
+                    </span>
+
+                </div>
+
+                <span class="signal-tag">
+                    POSITIVE
+                </span>
+
+            </div>
+
+
+            <div class="health-signal-item signal-positive">
+
+                <div class="signal-status-icon">
+                    ✓
+                </div>
+
+                <div class="signal-item-content">
+
+                    <strong>
+                        Profitability remains strong
+                    </strong>
+
+                    <span>
+                        Current net profit margin
+                        stands at 24.8%.
+                    </span>
+
+                </div>
+
+                <span class="signal-tag">
+                    STABLE
+                </span>
+
+            </div>
+
+
+            <div class="health-signal-item signal-attention">
+
+                <div class="signal-status-icon">
+                    !
+                </div>
+
+                <div class="signal-item-content">
+
+                    <strong>
+                        Cash flow deserves monitoring
+                    </strong>
+
+                    <span>
+                        Continue monitoring outgoing expenses
+                        to protect available cash.
+                    </span>
+
+                </div>
+
+                <span class="signal-tag">
+                    REVIEW
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     PART 3 — FINAL DASHBOARD FOOTER
+     ============================================================ -->
+
+<footer
+    class="dashboard-footer"
+    id="platform"
+>
+
+    <div class="dashboard-footer-main">
+
+
+        <div class="dashboard-footer-brand">
+
+            <div class="dashboard-footer-logo">
+
+                <img
+                    src="{{ url_for('static', filename='css/logo.png') }}"
+                    alt="Auroun DataSYN Logo"
+                >
+
+            </div>
+
+            <div>
+
+                <strong>
+                    FINEXA
+                </strong>
+
+                <span>
+                    by Auroun DataSYN
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-footer-message">
+
+            <span>
+                SMART FINANCIAL ANALYTICS PLATFORM
+            </span>
+
+            <strong>
+                Turn financial data into clear decisions.
+            </strong>
+
+        </div>
+
+
+        <div class="dashboard-footer-leadership">
+
+            <span>
+                CHIEF MANAGING DIRECTOR
+            </span>
+
+            <strong>
+                Arun Saxena
+            </strong>
+
+            <small>
+                Auroun DataSYN
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-footer-divider"></div>
+
+
+    <div class="dashboard-footer-bottom">
+
+        <span>
+            © 2026 Auroun DataSYN. All rights reserved.
+        </span>
+
+        <span>
+            Powered by
+            <strong>
+                Auroun DataSYN
+            </strong>
+        </span>
+
+        <span>
+            FINEXA
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- ============================================================
+     END — PART 3 HTML
+     ============================================================ -->
