@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FINEXA | Analyze Document</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/upload.css') }}"
+    >
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="upload-background">
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+        <div class="ambient ambient-three"></div>
+        <div class="background-grid"></div>
+    </div>
+
+
+    <!-- HEADER -->
+    <header class="upload-header">
+
+        <a href="/" class="back-button">
+            ← Back
+        </a>
+
+        <div class="page-status">
+            <span class="status-dot"></span>
+            DOCUMENT ANALYSIS
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="upload-main">
+
+        <!-- INTRO -->
+        <section class="upload-intro">
+
+            <span class="eyebrow">
+                FINEXA PLATFORM
+            </span>
+
+            <h1>
+                Analyze
+                <span>Your Document</span>
+            </h1>
+
+            <p>
+                Upload your financial document and transform
+                its information into clear, structured results.
+            </p>
+
+        </section>
+
+
+        <!-- ANALYZE CARD -->
+        <section class="analyze-section">
+
+            <div class="analyze-card">
+
+                <!-- CARD HEADER -->
+                <div class="analyze-card-header">
+
+                    <div>
+                        <span>DOCUMENT INPUT</span>
+
+                        <h2>
+                            Analyze Document
+                        </h2>
+                    </div>
+
+                    <div class="ready-badge">
+                        <span></span>
+                        READY
+                    </div>
+
+                </div>
+
+
+                <!-- UPLOAD AREA -->
+                <div
+                    class="upload-area"
+                    id="uploadArea"
+                >
+
+                    <!-- DECORATIVE RINGS -->
+                    <div class="upload-ring ring-one"></div>
+                    <div class="upload-ring ring-two"></div>
+                    <div class="upload-ring ring-three"></div>
+
+
+                    <!-- DOCUMENT ICON -->
+                    <div class="document-visual">
+
+                        <div class="document-paper">
+
+                            <div class="paper-fold"></div>
+
+                            <div class="paper-line line-one"></div>
+                            <div class="paper-line line-two"></div>
+                            <div class="paper-line line-three"></div>
+
+                        </div>
+
+                        <div class="upload-arrow">
+                            ↑
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        Browse Your Document
+                    </h3>
+
+                    <p>
+                        Drag and drop your file here
+                    </p>
+
+                    <small>
+                        or choose a file from your device
+                    </small>
+
+
+                    <!-- REAL FILE INPUT -->
+                    <input
+                        type="file"
+                        id="documentFile"
+                        name="file"
+                        accept=".xlsx,.xls,.csv,.json"
+                    >
+
+
+                    <!-- BROWSE BUTTON -->
+                    <button
+                        type="button"
+                        id="browseButton"
+                        class="browse-button"
+                    >
+
+                        <span class="button-shine"></span>
+
+                        <span class="button-icon">
+                            ↑
+                        </span>
+
+                        <span>
+                            Browse File
+                        </span>
+
+                        <strong>
+                            →
+                        </strong>
+
+                    </button>
+                    <!-- SUPPORTED FORMATS -->
+                    <div class="supported-formats">
+
+                        <span>XLSX</span>
+
+                        <i></i>
+
+                        <span>CSV</span>
+
+                        <i></i>
+
+                        <span>JSON</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SELECTED FILE -->
+                <div
+                    class="selected-document"
+                    id="selectedDocument"
+                >
+
+                    <div class="selected-icon">
+                        FILE
+                    </div>
+
+                    <div class="selected-info">
+
+                        <strong id="selectedFileName">
+                            No document selected
+                        </strong>
+
+                        <span id="selectedFileSize">
+                            Choose a document to continue
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="removeFile"
+                        class="remove-file"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <!-- ANALYZE BUTTON -->
+                <div class="analyze-action">
+
+                    <button
+                        type="button"
+                        id="analyzeButton"
+                        class="analyze-button"
+                        disabled
+                    >
+
+                        <span class="analyze-shine"></span>
+
+                        <span>
+                            Analyze Document
+                        </span>
+
+                        <strong>
+                            →
+                        </strong>
+
+                    </button>
+
+                </div>
+
+
+                <!-- STATUS -->
+                <div
+                    class="analysis-status"
+                    id="analysisStatus"
+                >
+
+                    <span></span>
+
+                    Waiting for document
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESS -->
+        <div class="process-flow">
+
+            <div
+                class="process-step active"
+                id="stepDocument"
+            >
+
+                <span>
+                    01
+                </span>
+
+                <strong>
+                    DOCUMENT
+                </strong>
+
+            </div>
+
+
+            <div class="process-line"></div>
+
+
+            <div
+                class="process-step"
+                id="stepAnalysis"
+            >
+
+                <span>
+                    02
+                </span>
+
+                <strong>
+                    ANALYSIS
+                </strong>
+
+            </div>
+
+
+            <div class="process-line"></div>
+
+
+            <div
+                class="process-step"
+                id="stepResults"
+            >
+
+                <span>
+                    03
+                </span>
+
+                <strong>
+                    RESULTS
+                </strong>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script
+        src="{{ url_for('static', filename='js/upload.js') }}"
+    ></script>
+
+</body>
+</html>
+<!-- =========================================================
+     PART 2 — SAMPLE ANALYTICS
+========================================================= -->
+
+<section class="sample-analytics" id="sampleAnalytics">
+
+    <div class="sample-heading">
+
+        <div class="sample-heading-text">
+
+            <span class="section-eyebrow">
+                SAMPLE ANALYTICS
+            </span>
+
+            <h2>
+                See What FINEXA
+                <span>Can Reveal.</span>
+            </h2>
+
+            <p>
+                Explore a preview of the financial intelligence
+                FINEXA can generate from your documents.
+            </p>
+
+        </div>
+
+
+        <div class="sample-status">
+
+            <span class="sample-status-dot"></span>
+
+            LIVE PREVIEW
+
+        </div>
+
+    </div>
+
+
+    <!-- CHART GRID -->
+    <div class="sample-chart-grid">
+
+
+        <!-- =========================================
+             CHART 1 — REVENUE VS EXPENSE
+        ========================================== -->
+
+        <div class="sample-chart-card large-chart">
+
+            <div class="chart-card-top">
+
+                <div>
+
+                    <span>
+                        PERFORMANCE
+                    </span>
+
+                    <h3>
+                        Revenue vs Expenses
+                    </h3>
+
+                </div>
+
+
+                <div class="chart-period">
+                    6 MONTHS
+                </div>
+
+            </div>
+
+
+            <div class="bar-chart-wrapper">
+
+                <div class="bar-y-axis">
+
+                    <span>100</span>
+                    <span>75</span>
+                    <span>50</span>
+                    <span>25</span>
+                    <span>0</span>
+
+                </div>
+
+
+                <div class="bar-chart-area">
+
+                    <div class="chart-grid-lines">
+
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+
+                    </div>
+
+
+                    <div class="bars-container">
+
+
+                        <div class="bar-column">
+
+                            <div class="bar-set">
+
+                                <div
+                                    class="sample-bar revenue"
+                                    style="height:52%"
+                                ></div>
+
+                                <div
+                                    class="sample-bar expense"
+                                    style="height:34%"
+                                ></div>
+
+                            </div>
+
+                            <span>JAN</span>
+
+                        </div>
+
+
+                        <div class="bar-column">
+
+                            <div class="bar-set">
+
+                                <div
+                                    class="sample-bar revenue"
+                                    style="height:61%"
+                                ></div>
+
+                                <div
+                                    class="sample-bar expense"
+                                    style="height:39%"
+                                ></div>
+
+                            </div>
+
+                            <span>FEB</span>
+
+                        </div>
+
+
+                        <div class="bar-column">
+
+                            <div class="bar-set">
+
+                                <div
+                                    class="sample-bar revenue"
+                                    style="height:68%"
+                                ></div>
+
+                                <div
+                                    class="sample-bar expense"
+                                    style="height:43%"
+                                ></div>
+
+                            </div>
+
+                            <span>MAR</span>
+
+                        </div>
+
+
+                        <div class="bar-column">
+
+                            <div class="bar-set">
+                                <div
+                                    class="sample-bar revenue"
+                                    style="height:63%"
+                                ></div>
+
+                                <div
+                                    class="sample-bar expense"
+                                    style="height:47%"
+                                ></div>
+
+                            </div>
+
+                            <span>APR</span>
+
+                        </div>
+
+
+                        <div class="bar-column">
+
+                            <div class="bar-set">
+
+                                <div
+                                    class="sample-bar revenue"
+                                    style="height:78%"
+                                ></div>
+
+                                <div
+                                    class="sample-bar expense"
+                                    style="height:49%"
+                                ></div>
+
+                            </div>
+
+                            <span>MAY</span>
+
+                        </div>
+
+
+                        <div class="bar-column">
+
+                            <div class="bar-set">
+
+                                <div
+                                    class="sample-bar revenue"
+                                    style="height:91%"
+                                ></div>
+
+                                <div
+                                    class="sample-bar expense"
+                                    style="height:55%"
+                                ></div>
+
+                            </div>
+
+                            <span>JUN</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="chart-legend">
+
+                <span>
+                    <i class="legend-dot revenue-dot"></i>
+                    Revenue
+                </span>
+
+                <span>
+                    <i class="legend-dot expense-dot"></i>
+                    Expenses
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             CHART 2 — MONTHLY TREND
+        ========================================== -->
+
+        <div class="sample-chart-card trend-chart">
+
+            <div class="chart-card-top">
+
+                <div>
+
+                    <span>
+                        TREND ANALYSIS
+                    </span>
+
+                    <h3>
+                        Monthly Growth
+                    </h3>
+
+                </div>
+
+
+                <div class="trend-value">
+                    +24.8%
+                </div>
+
+            </div>
+
+
+            <div class="line-chart">
+
+                <div class="line-grid">
+
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+
+                </div>
+
+
+                <svg
+                    viewBox="0 0 600 240"
+                    preserveAspectRatio="none"
+                    class="growth-svg"
+                >
+
+                    <defs>
+
+                        <linearGradient
+                            id="growthGradient"
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="1"
+                        >
+
+                            <stop
+                                offset="0%"
+                                stop-opacity="0.35"
+                            />
+
+                            <stop
+                                offset="100%"
+                                stop-opacity="0"
+                            />
+
+                        </linearGradient>
+
+                    </defs>
+                    <path
+                        class="growth-area"
+                        d="
+                            M0,195
+                            L100,170
+                            L200,178
+                            L300,125
+                            L400,142
+                            L500,72
+                            L600,38
+                            L600,240
+                            L0,240
+                            Z
+                        "
+                    ></path>
+
+
+                    <path
+                        class="growth-line"
+                        d="
+                            M0,195
+                            L100,170
+                            L200,178
+                            L300,125
+                            L400,142
+                            L500,72
+                            L600,38
+                        "
+                    ></path>
+
+
+                    <circle
+                        cx="0"
+                        cy="195"
+                        r="5"
+                    ></circle>
+
+                    <circle
+                        cx="100"
+                        cy="170"
+                        r="5"
+                    ></circle>
+
+                    <circle
+                        cx="200"
+                        cy="178"
+                        r="5"
+                    ></circle>
+
+                    <circle
+                        cx="300"
+                        cy="125"
+                        r="5"
+                    ></circle>
+
+                    <circle
+                        cx="400"
+                        cy="142"
+                        r="5"
+                    ></circle>
+
+                    <circle
+                        cx="500"
+                        cy="72"
+                        r="5"
+                    ></circle>
+
+                    <circle
+                        cx="600"
+                        cy="38"
+                        r="5"
+                    ></circle>
+
+                </svg>
+
+
+                <div class="line-months">
+
+                    <span>JAN</span>
+                    <span>FEB</span>
+                    <span>MAR</span>
+                    <span>APR</span>
+                    <span>MAY</span>
+                    <span>JUN</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             CHART 3 — EXPENSE DISTRIBUTION
+        ========================================== -->
+
+        <div class="sample-chart-card distribution-chart">
+
+            <div class="chart-card-top">
+
+                <div>
+
+                    <span>
+                        COST ANALYSIS
+                    </span>
+
+                    <h3>
+                        Expense Distribution
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="distribution-content">
+
+
+                <div class="donut-chart">
+
+                    <div class="donut-center">
+
+                        <strong>
+                            100%
+                        </strong>
+
+                        <span>
+                            EXPENSES
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="distribution-list">
+
+
+                    <div class="distribution-item">
+
+                        <div>
+
+                            <span class="distribution-marker marker-one"></span>
+
+                            Operations
+
+                        </div>
+
+                        <strong>
+                            34%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="distribution-item">
+
+                        <div>
+
+                            <span class="distribution-marker marker-two"></span>
+
+                            Salaries
+
+                        </div>
+
+                        <strong>
+                            27%
+                        </strong>
+
+                    </div>
+                    <div class="distribution-item">
+
+                        <div>
+
+                            <span class="distribution-marker marker-three"></span>
+
+                            Marketing
+
+                        </div>
+
+                        <strong>
+                            21%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="distribution-item">
+
+                        <div>
+
+                            <span class="distribution-marker marker-four"></span>
+
+                            Other
+
+                        </div>
+
+                        <strong>
+                            18%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SAMPLE MESSAGE -->
+
+    <div class="sample-bottom">
+
+        <div class="sample-bottom-icon">
+            ✦
+        </div>
+
+        <div>
+
+            <strong>
+                Your data. Your insights.
+            </strong>
+
+            <span>
+                These are sample visualizations.
+                Actual charts are generated from your uploaded document.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     PART 3 — ABOUT FINEXA PLATFORM
+========================================================= -->
+
+<section class="finexa-platform" id="finexaPlatform">
+
+    <div class="platform-glow platform-glow-one"></div>
+    <div class="platform-glow platform-glow-two"></div>
+
+    <div class="platform-heading">
+
+        <span class="section-eyebrow">FINEXA INTELLIGENCE</span>
+
+        <h2>
+            From Financial Documents
+            <span>To Better Decisions.</span>
+        </h2>
+
+        <p>
+            FINEXA transforms raw financial information into
+            structured analytics, meaningful patterns and
+            decision-ready insights.
+        </p>
+
+    </div>
+
+    <div class="platform-showcase">
+
+        <div class="platform-visual">
+
+            <div class="visual-orbit orbit-one"></div>
+            <div class="visual-orbit orbit-two"></div>
+            <div class="visual-orbit orbit-three"></div>
+
+            <div class="visual-core">
+
+                <div class="core-icon">✦</div>
+
+                <strong>FINEXA</strong>
+
+                <span>FINANCIAL INTELLIGENCE</span>
+
+            </div>
+
+            <div class="floating-node node-one">
+                <span>01</span>
+                <strong>DATA</strong>
+            </div>
+
+            <div class="floating-node node-two">
+                <span>02</span>
+                <strong>ANALYSIS</strong>
+            </div>
+
+            <div class="floating-node node-three">
+                <span>03</span>
+                <strong>INSIGHTS</strong>
+            </div>
+
+        </div>
+
+        <div class="platform-content">
+
+            <div class="platform-feature">
+
+                <div class="feature-number">01</div>
+
+                <div>
+                    <h3>Understand Your Data</h3>
+
+                    <p>
+                        FINEXA reads structured financial documents
+                        and organizes important information into
+                        an analysis-ready format.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="platform-feature">
+
+                <div class="feature-number">02</div>
+
+                <div>
+                    <h3>Reveal Financial Patterns</h3>
+
+                    <p>
+                        Discover revenue movement, expense behavior,
+                        growth trends and distribution patterns
+                        through interactive analytics.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="platform-feature">
+
+                <div class="feature-number">03</div>
+
+                <div>
+                    <h3>Turn Insights Into Action</h3>
+
+                    <p>
+                        Convert complex financial information into
+                        clear visual insights that support smarter
+                        business decisions.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="platform-flow">
+
+        <div class="flow-item">
+            <span>UPLOAD</span>
+            <strong>01</strong>
+        </div>
+
+        <div class="flow-connector"></div>
+
+        <div class="flow-item">
+            <span>PROCESS</span>
+            <strong>02</strong>
+        </div>
+
+        <div class="flow-connector"></div>
+
+        <div class="flow-item">
+            <span>ANALYZE</span>
+            <strong>03</strong>
+        </div>
+
+        <div class="flow-connector"></div>
+
+        <div class="flow-item">
+            <span>DISCOVER</span>
+            <strong>04</strong>
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     PART 4 — EXPLORE & FILTER DATA
+========================================================= -->
+
+<section class="explore-data" id="exploreData">
+
+    <div class="explore-heading">
+
+        <div>
+            <span class="section-eyebrow">EXPLORE DATA</span>
+
+            <h2>
+                Explore Your
+                <span>Financial Data.</span>
+            </h2>
+
+            <p>
+                Refine your analysis, focus on important metrics,
+                and explore financial information with greater control.
+            </p>
+        </div>
+
+        <div class="explore-status">
+            <span></span>
+            DATA CONTROLS
+        </div>
+
+    </div>
+
+
+    <div class="filter-panel">
+
+        <div class="filter-panel-header">
+
+            <div>
+                <span>ANALYSIS CONTROLS</span>
+                <h3>Filter & Explore</h3>
+            </div>
+
+            <button
+                type="button"
+                class="reset-filters"
+                id="resetFilters"
+            >
+                Reset Filters
+            </button>
+
+        </div>
+
+
+        <div class="filter-grid">
+
+            <!-- DATE RANGE -->
+
+            <div class="filter-control">
+
+                <label for="dateRange">
+                    DATE RANGE
+                </label>
+
+                <div class="select-wrapper">
+
+                    <select id="dateRange">
+
+                        <option value="all">
+                            All Periods
+                        </option>
+
+                        <option value="monthly">
+                            Monthly
+                        </option>
+
+                        <option value="quarterly">
+                            Quarterly
+                        </option>
+
+                        <option value="yearly">
+                            Yearly
+                        </option>
+
+                    </select>
+
+                    <span>⌄</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="filter-control">
+
+                <label for="categoryFilter">
+                    CATEGORY
+                </label>
+
+                <div class="select-wrapper">
+
+                    <select id="categoryFilter">
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                        <option value="revenue">
+                            Revenue
+                        </option>
+
+                        <option value="expenses">
+                            Expenses
+                        </option>
+
+                        <option value="operations">
+                            Operations
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                    <span>⌄</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- METRIC -->
+
+            <div class="filter-control">
+
+                <label for="metricFilter">
+                    PRIMARY METRIC
+                </label>
+
+                <div class="select-wrapper">
+
+                    <select id="metricFilter">
+
+                        <option value="revenue">
+                            Revenue
+                        </option>
+
+                        <option value="expenses">
+                            Expenses
+                        </option>
+
+                        <option value="profit">
+                            Profit
+                        </option>
+
+                        <option value="growth">
+                            Growth
+                        </option>
+
+                    </select>
+
+                    <span>⌄</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- VIEW -->
+
+            <div class="filter-control">
+
+                <label for="viewMode">
+                    VIEW MODE
+                </label>
+
+                <div class="select-wrapper">
+                <select id="viewMode">
+
+                        <option value="overview">
+                            Overview
+                        </option>
+
+                        <option value="trend">
+                            Trend
+                        </option>
+
+                        <option value="comparison">
+                            Comparison
+                        </option>
+
+                        <option value="distribution">
+                            Distribution
+                        </option>
+
+                    </select>
+
+                    <span>⌄</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="active-filters" id="activeFilters">
+
+            <span class="filter-label">
+                ACTIVE
+            </span>
+
+            <button type="button" class="filter-chip">
+                All Periods
+                <b>×</b>
+            </button>
+
+            <button type="button" class="filter-chip">
+                All Categories
+                <b>×</b>
+            </button>
+
+            <button type="button" class="filter-chip">
+                Revenue
+                <b>×</b>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- DATA EXPLORATION PREVIEW -->
+
+    <div class="explore-preview">
+
+        <div class="preview-header">
+
+            <div>
+                <span>DATA EXPLORER</span>
+                <h3>Financial Overview</h3>
+            </div>
+
+            <div class="preview-live">
+                <i></i>
+                READY
+            </div>
+
+        </div>
+
+
+        <div class="explore-metrics">
+
+            <div class="explore-metric">
+
+                <span>TOTAL REVENUE</span>
+
+                <strong>₹12.84L</strong>
+
+                <small>Sample value</small>
+
+            </div>
+
+
+            <div class="explore-metric">
+
+                <span>TOTAL EXPENSES</span>
+
+                <strong>₹7.42L</strong>
+
+                <small>Sample value</small>
+
+            </div>
+
+
+            <div class="explore-metric">
+
+                <span>NET POSITION</span>
+
+                <strong>₹5.42L</strong>
+
+                <small>Sample value</small>
+
+            </div>
+
+
+            <div class="explore-metric">
+
+                <span>GROWTH</span>
+
+                <strong>+24.8%</strong>
+
+                <small>Sample value</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="explore-empty">
+
+            <div class="explore-empty-icon">
+                ◇
+            </div>
+
+            <h4>Your Financial Dataset</h4>
+
+            <p>
+                Once your document is analyzed, FINEXA will
+                populate this explorer with your actual financial data.
+            </p>
+
+            <span>
+                SAMPLE PREVIEW • ACTUAL DATA AFTER ANALYSIS
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     FINAL PART — CTA + AROUN DATA SYN BRANDING
+========================================================= -->
+
+<section class="final-finexa" id="finalFinexa">
+
+    <div class="final-orb orb-one"></div>
+    <div class="final-orb orb-two"></div>
+    <div class="final-grid"></div>
+
+    <div class="final-content">
+
+        <span class="final-eyebrow">
+            FINEXA PLATFORM
+        </span>
+
+        <h2>
+            Your Financial Data.
+            <span>Your Next Decision.</span>
+        </h2>
+
+        <p>
+            Upload your document and let FINEXA turn
+            complex financial information into clear,
+            structured and meaningful insights.
+        </p>
+
+        <a href="#uploadArea" class="final-action">
+            <span class="final-button-shine"></span>
+            <span>Start Your Analysis</span>
+            <strong>→</strong>
+        </a>
+
+    </div>
+
+
+    <!-- FINAL BRANDING -->
+
+    <div class="final-branding">
+
+        <div class="brand-line"></div>
+
+        <div class="brand-logo-wrap">
+
+            <img
+                src="{{ url_for('static', filename='css/logo.png') }}"
+                alt="Auroun DataSYN"
+                class="final-logo"
+            >
+
+            <div class="brand-details">
+
+                <strong>Auroun DataSYN</strong>
+
+                <span>
+                    FINEXA • Smart Financial Analytics Platform
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="founder-block">
+
+            <span>FOUNDER &amp; LEADERSHIP</span>
+
+            <strong>Arun Saxena</strong>
+
+            <p>
+                Chief Managing Director
+            </p>
+
+        </div>
+
+
+        <div class="brand-footer">
+
+            <span>
+                Powered by Auroun DataSYN
+            </span>
+
+            <span>
+                © 2026 All rights reserved
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
